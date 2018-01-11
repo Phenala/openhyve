@@ -1,0 +1,50 @@
+<div class='teams'>
+  <div class='teams-box'>
+    <app-search-bar [tags]='"tag-full-width"'></app-search-bar>
+    <div class="my-teams">
+      <div class="my-teams-title">
+        My teams
+      </div>
+      <div class='team-instance' *ngFor='let team of myteams'>
+        <div class='row-set'>
+          <div>
+            <app-entity-image></app-entity-image>
+          </div>
+          <div class="team-content">
+            <div class="team-name">
+              {{team.name}}
+            </div>
+            <div class="team-info">
+              You have {{team.unseenAnnouncements}} unseen announcements.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="other-teams">
+      <div class='team-instance' *ngFor='let team of teams'>
+        <div class="team-info-2">
+          David Dundee is a member of this team.
+        </div>
+        <div class='row-set fill'>
+          <div>
+            <app-entity-image [scale]='1.7' ></app-entity-image>
+          </div>
+          <div class="team-content">
+            <div class="team-name">
+              {{team.name}}
+            </div>
+            <div>
+              {{team.focus}}
+            </div>
+            <div class="team-info">
+               <div>{{team.members.length + (team.members.length > 1 ? " Members":" Member")}}</div> 
+               <div> Donna Linders, Cory Modden, Rath Redd, ... </div>
+               Projects: Thollus, Lilium
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

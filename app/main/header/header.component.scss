@@ -1,0 +1,38 @@
+@import '../../../vars';
+
+.header {
+	background-color: $primary;
+	background-image: url('../../../assets/images/svgs/header-bg.svg');
+	background-position-y: 80%;
+	background-size: cover;
+	padding: 15px;
+	overflow: hidden;
+	box-sizing: border-box;
+	height: 80px;
+}
+
+.logo-image {
+	width: 50px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+
+.logo-name {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 180%;
+	font-family: $head;
+}
+
+.account-details {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 5px;
+	float: right;
+	@include mid-row;
+}
+
+.account-details > div {
+	margin-right: 20px;
+}

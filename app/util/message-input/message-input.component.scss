@@ -1,0 +1,54 @@
+@import '../../../vars';
+
+.message-input textarea {
+    background-color: $primary;
+    border: none;
+    padding: 20px 100px 20px 20px;
+    font-family: $normal;
+    font-size: 110%;
+    color: $text;
+    height: 70px;
+    width: 100%;
+    margin-right: -90px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: 0.2s;
+}
+
+.message-input textarea:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.1);
+    height: 150px;
+}
+
+.send-button {
+    background-image: url('../../../assets/images/send-icon.png');
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    box-sizing: border-box;
+    background-size: cover;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.send-button:active {
+    transform: scale(0.8);
+    background-color: $secondary;
+}
+
+.side-button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}

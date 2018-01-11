@@ -1,0 +1,34 @@
+@import '../../../vars';
+
+.tabs {
+    width: 100%;
+}
+
+.tab-title {
+    width: 33.33%;
+    text-align: center;
+    font-size: 200%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-family: $title;
+    text-transform: uppercase;
+    @include clickable;
+
+    transition: 0.2s;
+}
+
+.underline {
+    height: 5px;
+    background-color: $secondary;
+}
+
+.active_tab {
+    color: $texthighlighted;
+}
+
+.underline-thumb {
+    background-color: lighten($secondary, 20%);
+    height: 100%;
+    width: 33.33%;
+    transition: 0.2s;
+}

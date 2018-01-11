@@ -1,0 +1,88 @@
+@import '../../../vars';
+
+input {
+    font-family: $normal;
+}
+
+.login-bar {
+    background-color: $primary;
+    width: 40vw;
+    height: 100vh;
+    transition: 1s;
+}
+
+.login-bar:hover {
+    width: 50vw;
+}
+
+.sign-up {
+    padding: 40px;
+    font-size: 110%;
+    text-align: right;
+}
+
+.sign-up-link {
+    color: $textlink;
+    @include clickable;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.logo-img img {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.login-inputs {
+    padding-top: 20vh;
+    width: 300px;
+    margin: auto;
+}
+
+.textbox {
+    padding-bottom: 30px;
+}
+
+.textbox input {
+    background-color: transparent;
+    color: $text;
+    width: 100%;
+    border: none;
+    font-size: 120%;
+    padding: 20px 20px 10px 20px;
+    transition: 0.2s;
+    border-bottom: solid medium $secondary;
+}
+
+.textbox input:focus {
+    background-color: rgba(255,255,255,0.1);
+    outline: none;
+}
+
+.submit-button input {
+    background-color: $secondary;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 50%;
+    padding: 10px 30px;
+    font-size: 120%;
+    transition: 0.2s;
+    @include clickable;
+
+    &:focus {
+        outline: none;
+        background-color: lighten($secondary, 20%);
+    }
+
+    &:active {
+        background-color: darken($secondary, 10%);
+    }
+
+    &:hover {
+        background-color: lighten($secondary, 10%);
+    }
+}

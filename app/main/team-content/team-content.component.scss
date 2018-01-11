@@ -1,0 +1,25 @@
+@import '../../../vars';
+
+.team-content {
+    background-color: $primary;
+    height: 1000px;
+}
+
+.team-header {
+    background-image: url('../../../assets/images/svgs/header-bg.svg');
+    background-size: cover;
+}
+
+.team-header-image {
+    margin: auto;
+    padding: 20px 20px 0px 20px;
+    display: table;
+}
+
+.team-header-title {
+    @include title;
+    padding: 10px;
+    font-size: 300%;
+    text-align: center;
+    margin-top: -50px;
+}

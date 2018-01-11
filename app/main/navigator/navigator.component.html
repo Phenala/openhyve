@@ -1,0 +1,26 @@
+<nav class="navigator-set"> 
+    <div class='navigator' [ngClass]='navOpenState'>
+      <div class='navigator-bg'>
+      </div>
+      <div class='navigator-content'>
+        <div class='navigator-open' (click)='toggleNavigator()'>
+          <div class='options'>
+            <div class='options-button'>
+            </div>
+          </div>
+          <div class='nav-icon mob-icon' >
+            <img src="{{getCurrentPage().iconlink}}">
+          </div>
+        </div>
+        <a  *ngFor='let page of navigation' [routerLink]='page.routerlink'>
+          <div [ngClass]='{currentpage: page.routerlink == v.pathname}'  class='nav-bar'>
+            <div class='nav-icon' >
+              <img src="{{page.iconlink}}">
+            </div>
+            <div class='navigator-title'>{{page.title}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+</nav>

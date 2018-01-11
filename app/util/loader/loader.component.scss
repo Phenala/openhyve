@@ -1,0 +1,63 @@
+@import '../../../vars';
+
+.loader {
+    width: 60px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.primary {
+    .loader-circle-1, .loader-circle-2 {
+        background-color: $primary;
+    }
+}
+
+.color-class {
+    background-color: $secondary;
+    animation-name: colorizex;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+}
+
+.loader-circle-1, .loader-circle-2 {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.loader-circle-1 {
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+.loader-circle-2 {
+    transform: translateY(30px) scaleY(0.5);
+    opacity: 0.6;
+    animation-name: bounce2;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+@keyframes bounce {
+    0%{transform: translateY(40px); background-color: #ff0;};
+    25%{transform: translateY(-40px) scale(2); animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)};
+    50%{transform: translateY(40px);};
+    75%{transform: translateY(-40px) scale(0.5); background-color: #f00; animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)};
+    100%{transform: translateY(40px)};
+}
+
+@keyframes bounce2 {
+    0%{transform: translateY(30px) scaleY(0.5); background-color: #f00;};
+    25%{transform: translateY(60px) scaleY(0.5); background-color: #ff0; animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); opacity: 0};
+    50%{transform: translateY(30px) scaleY(0.5); background-color: #0f0;};
+    75%{transform: translateY(60px) scaleY(0.5); background-color: #0ff; animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); opacity: 0};
+}
+
+@keyframes colorizex {
+    0%{background-color: #f00};
+    20%{background-color: #ff0};
+    40%{background-color: #0f0};
+    60%{background-color: #0ff};
+    80%{background-color: #00f};
+}

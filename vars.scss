@@ -1,0 +1,56 @@
+/*colors*/
+
+$primary: #000;
+$secondary: #440;
+$converse: #eee;
+$text: #bbb;
+$textlight: #999;
+$texthighlighted: #fff;
+$textdark: #222;
+$textlink: #78d;
+$feedbackprimary: #483;
+
+/*fonts*/
+
+$normal: Open Sans, serif;
+$head: Infinity;
+$title: Dense;
+
+/*values*/
+
+$naviconsize: 60px;
+$mobscreen: 700px;
+
+
+/*functions*/
+
+@mixin circle-picture($size: 50px) {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 100px;
+	width: $size;
+	height: $size;
+}
+
+@mixin mid-row {
+	> div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+@mixin title {
+	font-family: $title;
+	font-size: 200%;
+	text-transform: uppercase;
+}
+
+@mixin clickable {
+	cursor: pointer;
+	user-select: none;
+}
+
+@mixin bgcolor($alpha: 0.5) {
+	background-color: mix($primary, $secondary, $alpha);
+}

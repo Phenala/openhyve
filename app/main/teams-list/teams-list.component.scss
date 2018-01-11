@@ -1,0 +1,65 @@
+@import '../../../vars';
+
+.teams-box {
+    background-color: $secondary;
+    height: 1000px;
+    width: 500px;
+    transition: 0.3s;
+}
+
+.my-teams {
+    padding: 5px;
+    background-color: lighten($secondary, 20%);
+}
+
+.my-teams-title {
+    font-family: $title;
+    font-size: 200%;
+    padding: 5px 30px;
+    color: $textdark;
+    text-transform: uppercase;
+}
+
+.team-instance {
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.2s;
+
+    @include clickable;
+}
+
+.team-instance:hover {
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.team-instance:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.team-info {
+    color: $textlight;
+    font-size: 80%;
+}
+
+.team-online-status {
+    color: $textlight;
+    font-size: 70%;
+    text-align: right;
+}
+
+.team-content {
+    width: 100%;
+    padding: 10px;
+}
+
+.team-info-2 {
+    color: $textlight;
+    font-size: 70%;
+    text-align: right;
+}
+
+.team-name {
+    font-size: 110%;
+    color: $textlink;
+}

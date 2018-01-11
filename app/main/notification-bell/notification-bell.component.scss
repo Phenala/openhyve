@@ -1,0 +1,134 @@
+@import '../../../vars';
+
+.notification-bell-icon {
+	background-image: url('../../../assets/images/bell.png');
+	@include circle-picture(40px);
+	background-size: 70%;
+	transition: 0.4s;
+}
+
+a {
+	color: $textlink;
+	cursor: pointer;
+}
+
+.notification-bell-icon:active {
+	background-color: $primary;
+	transform: scale(0.7);
+}
+
+
+.dropdown {
+	width: 400px;
+	max-height: 200px;
+	margin-top: 20px;
+	position: absolute;
+	right: 20px;
+}
+
+.quote, .dropdown {
+	transition: 0.2s;
+	opacity: 0;
+	pointer-events: none;
+	transition-delay: 1s;
+}
+
+.enquote {
+	overflow: hidden;
+	margin: -10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	position: absolute;
+	width: 40px;
+	height: 20px;
+}
+
+.notification-target:hover {
+	.quote, .dropdown {
+		opacity: 1;
+		pointer-events: auto;
+		transition-delay: 0s;
+	}
+}
+
+.quote {
+	background-color: $secondary;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+	position: absolute;
+	transform: rotateZ(45deg);
+}
+
+.notif-bg-set {
+	text-align: right;
+	direction: rtl;
+	pointer-events: none;
+}
+
+.notif-bg-image {
+	width: 200px;
+	height: 100px;
+	opacity: 0.2;
+	background-size: cover;
+	margin-bottom: -100px;
+	background-position: center;
+	background-image: url('../../../assets/images/defaultimage.png');
+}
+
+.fade-gradient {
+	background-image: linear-gradient(to right, darken($secondary, 27%), transparent);
+	opacity: 1;
+}
+
+.notify-in {
+	padding: 5px;
+	
+}
+
+.notify {
+	font-size: 70%;
+	overflow: hidden;
+	background-color: darken($secondary, 10%);
+	margin-bottom: 10px;
+}
+
+.notify:last-child {
+	margin: 0px;
+}
+
+.notification-set {
+	background-color: $secondary;
+	padding: 5px;
+}
+
+.notify-message {
+	padding: 5px;
+}
+
+.notify-options {
+	text-align: right;
+}
+
+.notify-button {
+	display: inline-block;
+	margin-left: 10px;
+	user-select: none;
+	cursor: pointer;
+	padding: 5px;
+	border-bottom: solid 2px transparent;
+	transition: 0.2s;
+}
+
+.notify-button:hover {
+	color: $primary;
+	border-bottom: solid 2px $primary;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	margin: 0px;
+}
+
+.main-row-set {
+	width: 100%;
+}
+
+.height-fill {
+	height: 100%;
+}
+
+.fill {
+	width: 100%;
+}
+
+.body {
+	min-height: 1000px;
+}
+
+.main-row-set > div {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.row-set > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.block-row-set > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 700px) {
+
+	.fill-on-mobile > div {
+		width: 100%;
+	}
+
+	.block-on-mobile {
+		display: block !important;
+	}
+
+	.hide-on-mobile {
+		display: none;
+	}
+
+}

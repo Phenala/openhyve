@@ -1,0 +1,7 @@
+@import '../../../vars';
+
+.entity-image {
+	background-image: url('../../../assets/images/pp1.png');
+	background-color: $primary;
+	@include circle-picture(50px);
+}

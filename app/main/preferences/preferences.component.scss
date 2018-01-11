@@ -1,0 +1,75 @@
+@import '../../../vars';
+
+.preferences-icon {
+	background-image: url('../../../assets/images/options.png');
+	@include circle-picture(40px);
+	background-size: 70%;
+	transition: 0.4s;
+}
+
+.preferences-icon:active {
+	background-color: $primary;
+	transform: scale(0.7);
+}
+
+.dropdown {
+	width: 100px;
+	max-height: 200px;
+	margin-top: 15px;
+	position: absolute;
+	right: 0px;
+	font-size: 80%;
+}
+
+.preference-set {
+	background-color: $secondary;
+}
+
+.preference {
+	padding: 7px;
+	text-align: center;
+	transition: 0.2s;
+	user-select: none;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.preference:hover {
+	border-left: solid 3px $primary;
+	color: $primary;
+}
+
+.quote, .dropdown {
+	transition: 0.2s;
+	opacity: 0;
+	pointer-events: none;
+	transition-delay: 1s;
+}
+
+.enquote {
+	overflow: hidden;
+	margin: -10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	position: absolute;
+	width: 40px;
+	height: 20px;
+}
+
+.preferences-target:hover {
+	.quote, .dropdown {
+		opacity: 1;
+		pointer-events: auto;
+		transition-delay: 0s;
+	}
+}
+
+.quote {
+	background-color: $secondary;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+	position: absolute;
+	transform: rotateZ(45deg);
+}

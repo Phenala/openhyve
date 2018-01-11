@@ -1,0 +1,91 @@
+@import '../../../vars';
+
+.messages {
+    background-color: $primary;
+    height: 1000px;
+}
+
+.message-instance {
+    background-color: mix($primary, $secondary, 0.2);
+    padding: 20px;
+    margin: 5px 100px 5px 15px;
+}
+
+.message-timestamp {
+    padding: 5px;
+    text-align: right;
+    font-size: 70%;
+    color: $textlight;
+}
+
+.message-list {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 700px;
+    margin-right: 20px;
+}
+
+.message-list-fade {
+    background-image: linear-gradient(transparent, $primary);
+    height: 80px;
+    margin-top: -80px;
+    position: relative;
+}
+
+.message-content {
+    color: $text;
+    font-weight: lighter;
+}
+
+.message-seen-status {
+    background-image: url('../../../assets/images/seen-status-icon.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+.no-messages-banner {
+    opacity: 0.1;
+    height: 700px;
+    margin-bottom: -500px;
+}
+
+.message_not_seen {
+    background-image: url('../../../assets/images/not-seen-status-icon.png');
+}
+
+.message_sent {
+    background-color: $secondary;
+    margin: 5px 15px 5px 100px;
+}
+
+
+.right {
+    width: 100%;
+}
+
+.spaced {
+    margin-bottom: 30px;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}
+
+@media screen and (max-width: $mobscreen) {
+    
+    .messages {
+        width: 0px;
+        overflow: hidden;
+    }
+    
+    .messages_active {
+        width: 100vw;
+    }
+
+}

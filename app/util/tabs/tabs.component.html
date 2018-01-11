@@ -1,0 +1,11 @@
+<div class="tabs">
+  <div class="block-row-set">
+    <div *ngFor='let title of tabNames, let num = index' class="tab-title" [ngClass]='{active_tab: num == activeTab}' [ngStyle]='tabStyle' (click)='switchTo(num)'>
+      {{title}}
+    </div>
+  </div>
+  <div class="underline">
+    <div class="underline-thumb" [ngStyle]='underlineStyle'>
+    </div>
+  </div>
+</div>

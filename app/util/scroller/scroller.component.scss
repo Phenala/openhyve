@@ -1,0 +1,9 @@
+@import '../../../vars';
+
+.scrollspace {
+	background-color: $primary;
+	width: 10px;
+	height: 100%;
+	vertical-align: top;
+	display: table-cell;
+}

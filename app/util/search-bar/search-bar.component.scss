@@ -1,0 +1,68 @@
+@import '../../../vars';
+
+div {
+	font-family: $normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.searchinput {
+	margin-right: -34px;
+}
+
+.searchinput input {
+	font-family: $normal;
+	color: $text;
+	padding: 8px 40px 8px 20px;
+	width: 200px;
+	font-size: 110%;
+	background-color: transparent;
+	border: none;
+	border-bottom: solid medium $secondary;
+	transition: 0.4s;
+	box-sizing: border-box;
+}
+
+.searchinput input:focus {
+	outline: none;
+	width: 400px;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.searchicon {
+	background-image: url('../../../assets/images/search.png');
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	margin-top: -2px;
+	width: 30px;
+	position: relative;
+	left: -39px;
+	height: 30px;
+}
+
+.tag-full-width {
+
+	display: block;
+
+	.searchinput {
+		display: block;
+		margin: 0px;
+	}
+
+	.searchinput input {
+		width: 100%;
+		padding: 20px;
+		margin-right: -40px;
+	}
+
+	.searchinput input:focus {
+		width: 100%;
+	}
+
+	.searchicon {
+		left: 0px;
+	}
+
+}

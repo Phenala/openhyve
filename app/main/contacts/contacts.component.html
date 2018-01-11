@@ -1,0 +1,37 @@
+<div>
+  <div class='contacts'>
+    <div class='contacts-box' [ngClass]='{active_contact_box: activeContact != null}'>
+      <app-search-bar [tags]='"tag-full-width"' [searchtype]='"contacts"'></app-search-bar>
+      <div *ngFor='let user of contactService.contacts' class='contact-instance' (click)='openMessages(user.id)' [ngClass]='{active_contact: activeContact == user.id}'>
+        <div class='contact-online-status'>
+          {{user.online ? "Online" : "Last online " + user.lastOnline}}
+        </div>
+        <div class='row-set'>
+          <div class='contact-picture'>
+            <app-entity-image></app-entity-image>
+          </div>
+          <div class='contact-content'>
+            <div class='contact-name'>
+              {{user.name}}
+            </div>
+            <div class='row-set'>
+              <div class='contact-residue-message'>
+                {{(user.lastMessage | slice:0:50) + (user.lastMessage.length > 50?'...':'')}}
+              </div>
+              <div>
+                <div *ngIf='!user.sentLastMessage' class='contact-last-message-identifier'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf='user.unseenMessages > 0'>
+            <div class='contact-new-message-count'>
+              {{user.unseenMessages}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-loader *ngIf='this.contactService.isContactsLoading'></app-loader>
+    </div>
+  </div>
+</div>

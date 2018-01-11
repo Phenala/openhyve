@@ -1,0 +1,171 @@
+@import '../../../vars';
+
+$f: #fff;
+
+.navigator-set {
+    height: 1080px;
+}
+
+.navigator {
+    position: sticky;
+    top: 0px;
+}
+
+.navigator-bg {
+    background-color: $primary;
+    height: 1000px;
+    margin-bottom: -1000px;
+    width: 0px;
+    transition: 0.4s;
+}
+
+
+.navigator-content {
+    position: sticky;
+    top: 0px;
+    padding: 10px 0px;
+    width: 100px;
+    box-sizing: border-box;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.nav-icon {
+    background-color: rgba( 255, 255, 255, 0.2);
+    display: inline-block;
+    vertical-align: middle;
+    @include circle-picture($naviconsize);
+    background-color: $secondary;
+    margin: 10px 0px; 
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.nav-bar {
+    padding-left: 10px;
+    // transition: 0.3s;
+}
+
+.nav-bar:active {
+    transform: scale(0.9);
+}
+
+.--open {
+
+    .nav-bar {
+        display: block;
+    }
+
+    .navigator-bg {
+        width: 300px;
+    }
+
+    .nav-icon {
+        background-color: transparent;
+        transform: scale(0.85);
+    }
+    
+    .navigator-title {
+        opacity: 1;
+        margin-left: 0px;
+    }
+
+    .nav-bar:hover {
+        background-color: $secondary;
+    }
+
+    .nav-bar:active {
+        transform: scale(1);
+        background-color: darken($secondary, 10%) !important;
+    }
+
+    .options-button {
+        background-color: #fff;
+    }
+
+    .navigator-content {
+        width: 300px;
+    }
+    
+    .currentpage {
+        background-color: lighten($primary, 20%);
+    }
+
+    .currentpage .nav-icon {
+        background-color: transparent;
+    }
+}
+
+
+.nav-icon img {
+    width: $naviconsize;
+    height: $naviconsize;
+    user-select: none;
+}
+
+.navigator-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 120%;
+    opacity: 0;
+    margin-left: -70px;
+    padding-left: 20px;
+    width: 0px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navigator-open {
+    padding: 0px 20px;
+}
+
+.options {
+    padding: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.options:active {
+    background-color: $secondary;
+    transform: scale(0.7);
+}
+
+.options-button {
+    width: 15px;
+    height: 15px;
+    background-color: $secondary;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    transition: 0.2s;
+}
+
+.mob-icon {
+    display: none;
+}
+
+.currentpage .nav-icon {
+    background-color: lighten($secondary, 20%);
+}
+
+@media screen and (max-width: 700px) {
+
+    .navigator {
+        width: 0px;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .options {
+        display: none;
+    }
+
+    .mob-icon {
+        display: inherit;
+    }
+
+}

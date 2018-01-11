@@ -1,0 +1,89 @@
+@import '../../../vars';
+
+.contacts-box {
+    background-color: $secondary;
+    height: 1000px;
+    width: 500px;
+    transition: 0.3s;
+}
+
+.contact-instance {
+    margin: 5px;
+    padding: 10px;
+    transition: 0.2s;
+
+    @include bgcolor(20);
+    @include clickable;
+}
+
+.contact-instance:hover {
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.contact-instance:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.contact-online-status {
+    color: $textlight;
+    font-size: 70%;
+    text-align: right;
+}
+
+.contact-content {
+    width: 100%;
+    padding: 10px;
+}
+
+.contact-name {
+    font-size: 110%;
+    color: $textlink;
+}
+
+.contact-residue-message {
+    font-size: 80%;
+    color: $textlight;
+    text-overflow: ellipsis;
+    height: 10px;
+}
+
+.contact-new-message-count {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 5px;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: $feedbackprimary;
+}
+
+.contact-last-message-identifier {
+    background-image: url('../../../assets/images/sent-message-minicon.png');
+    opacity: 0.4;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-size: cover;
+}
+
+.active_contact {
+    background-color: $primary;
+    margin-right: 0px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .contacts-box {
+        width: 100vw;
+    }
+
+    
+    .active_contact_box {
+        width: 0px;
+        overflow: hidden;
+    }
+}
