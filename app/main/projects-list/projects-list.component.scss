@@ -1,0 +1,65 @@
+@import '../../../vars';
+
+.projects-list {
+    background-color: $secondary;
+    width: 500px;
+    height: 95vh;
+}
+
+.my-projects-set {
+    background-color: lighten($secondary, 15%);
+}
+
+.list-title {
+    color: $primary;
+    padding: 10px 20px;
+
+    @include title;
+
+    font-size: 200%;
+}
+
+.my-project-instance {
+    background-color: $mixpps;
+    padding: 10px;
+    transition: 0.3s;
+
+    &:hover {
+        color: $texthighlighted;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: $mixpss;
+    }
+
+    @include clickable;
+}
+
+.project-name {
+    font-size: 120%;
+}
+
+.set-info {
+    padding: 5px;
+}
+
+.set-num {
+    color: $textlight;
+    font-size: 90%;
+}
+
+.set-percent {
+    text-align: right;
+    width: 40px;
+}
+
+.task-info {
+    text-align: right;
+    color: $textlight;
+    font-size: 90%;
+}
+
+.list-picture {
+    padding: 10px;
+}

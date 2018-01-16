@@ -1,0 +1,17 @@
+<div class='members'>
+  <div *ngFor='let user of users' class='member-instance' [ngClass]='{admin: user.meta.status == "Admin"}'>
+    <div class='row-set'> 
+      <div class='image'>
+        <app-entity-image></app-entity-image>
+      </div>
+      <div>
+        <div  class='username'>
+          <app-entity-user [user]='user.user' ></app-entity-user>
+        </div>
+        <div class='status'>
+          {{user.meta.status}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

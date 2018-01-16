@@ -1,3 +1,4 @@
+import { UiService } from './../../services/ui.service';
 import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
 export class NavigatorComponent implements OnInit {
 
   navigatorOpenWidth = 300;
-  navOpenState = '';
 
   v = location;
 
@@ -22,7 +22,6 @@ export class NavigatorComponent implements OnInit {
       'iconlink': '../../../assets/images/chat-icon.png'
     };
 
-  navigatorBar = false;
   navigation = [
     {
       'title': 'Home',
@@ -45,7 +44,7 @@ export class NavigatorComponent implements OnInit {
     {
       'title': 'Projects',
       'description': 'The projects you are working on available in one place',
-      'routerlink': '/user/projects',
+      'routerlink': '/projects',
       'iconlink': '../../../assets/images/svgs/projects-icon.svg'
     },
     {
@@ -68,25 +67,14 @@ export class NavigatorComponent implements OnInit {
     }
   ];
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private ui: UiService) { }
 
   ngOnInit() {
     console.log(this.v);
   }
 
   toggleNavigator() {
-    this.navigatorBar = !this.navigatorBar;
-    this.updateNavigatorBar();
-  }
-
-  updateNavigatorBar() {
-    let navigatorBarNode = document.getElementById('nav-bg');
-    if (this.navigatorBar) {
-      this.navOpenState = '--open';
-    } else {
-      this.navOpenState = '';
-    }
-    console.log(this.navigatorBar);
+    this.ui.toggleNavigator();
   }
 
   getCurrentPage() {

@@ -1,7 +1,24 @@
 <div>
   <div class='team-project'>
-    <div class="project-instance">
-      <app-entity-image></app-entity-image>
+    <div *ngFor='let project of projects' class="project-instance">
+      <div class='main-row-set'>
+        <div>
+          <app-entity-image [scale]='3'></app-entity-image>
+        </div>
+        <div class='project-details'>
+          <div class='project-name'>
+            {{project.name}}
+            <div class='project-field'>
+              {{project.field}}
+            </div>
+          </div>
+          <div class='project-desc'>
+            {{project.description}}
+          </div>
+          <div class='project-contributors'>
+            {{project.leader}}  <span *ngFor='let member of project.members'>, {{member}}</span> and {{project.contributors}} others.
+          </div>
+        </div>
     </div>
   </div>
 </div>

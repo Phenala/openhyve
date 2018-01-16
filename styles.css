@@ -7,6 +7,8 @@ a {
 
 body {
 	margin: 0px;
+	font-size: 11pt;
+	overflow-x: hidden;
 }
 
 .main-row-set {
@@ -27,6 +29,16 @@ body {
 
 .main-row-set > div {
 	display: table-cell;
+	vertical-align: top;
+}
+
+.low-row-set > div {
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+.main-block-row-set > div {
+	display: inline-block;
 	vertical-align: top;
 }
 

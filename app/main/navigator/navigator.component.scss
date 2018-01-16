@@ -3,7 +3,7 @@
 $f: #fff;
 
 .navigator-set {
-    height: 1080px;
+    height: 95vh;
 }
 
 .navigator {
@@ -51,7 +51,7 @@ $f: #fff;
     transform: scale(0.9);
 }
 
-.--open {
+.nav_open {
 
     .nav-bar {
         display: block;
@@ -166,6 +166,9 @@ $f: #fff;
 
     .mob-icon {
         display: inherit;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
     }
 
 }

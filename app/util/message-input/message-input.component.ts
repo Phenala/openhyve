@@ -1,5 +1,5 @@
 import { ChatService } from './../../services/chat.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-message-input',
@@ -8,15 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageInputComponent implements OnInit {
 
+  @Input() placeholder = 'Your Message';
+  @Input() show = true;
+  @Input() focus = false;
+
   messageInputValue: string;
 
-  constructor(public chatService: ChatService) { }
+  constructor(public chatService: ChatService, private el: ElementRef) { }
 
   ngOnInit() {
   }
 
   sendMessage() {
     this.chatService.sendMessage(this.messageInputValue);
+  }
+
+  leave() {
+    this.focus = false;
   }
 
 }

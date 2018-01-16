@@ -1,9 +1,8 @@
 <div>
-  <div class='message-input'>
-    <textarea placeholder="Your Message..." [(ngModel)]='messageInputValue'></textarea>
+  <div class='message-input' [ngClass]='{minimized: !show && !focus}'>
+    <textarea placeholder="{{placeholder}}..." [(ngModel)]='messageInputValue' (blur)='leave()'></textarea>
     <div class='side-button'>
-      <div class='send-button'>
-      </div>
+      <app-button [label]='"Send"' ></app-button>
     </div>
   </div>
 </div>

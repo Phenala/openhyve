@@ -1,0 +1,75 @@
+<div class='team-detail'>
+  <div class='desc-set'>
+    <div class='desc'>
+      <app-entity-descriptor [type]='"Team"' ></app-entity-descriptor>
+    </div>
+  </div>
+  <div class='team-detail-header'>
+    <app-entity-image [scale]='5' ></app-entity-image>
+    <div class='team-header-name'>
+      {{team.name}}
+    </div>
+  </div>
+  <div class='main-row-set'>
+    <div>
+      <div class='section-title'>
+        Members
+      </div>
+      <div>
+        <app-members></app-members>
+      </div>
+    </div>
+    <div class='fill'>
+      <div class='section-title lean'>
+        General
+      </div>
+      <div>
+        <div class='description'>
+          <div class='team-info-name'>
+            {{team.name}}
+          </div>
+          <div class='team-info-focus'>
+            {{team.focus}}
+          </div>
+          <div class='team-info-desc'>
+            {{team.description}}
+          </div>
+          <div class='team-info-founder'>
+            Formed by <app-entity-user [user]='team.leader' ></app-entity-user>
+          </div>
+          <div class='team-info-members'>
+            {{team.memberCount}} members
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class='section-title'>
+      Assessments
+    </div>
+    <div class='main-block-row-set'>
+      <div  *ngFor='let stat of teamStats' class='field-set' [ngClass]='{selected: stat == selectedStat}' (click)='selectStat(stat)'>
+        <div class='field'>
+          {{stat.title}}
+        </div>
+        <div class='f-value'>
+          <div class='row-set'>
+            <div class='val-value'>
+              {{team[stat.target]}}
+            </div>
+            <div class='val-unit'>
+              {{stat.unit}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='selected-stat-title'>
+        {{selectedStat.title}}
+      </div>
+      <div class='graph-out'>
+        <app-line-graph></app-line-graph>
+      </div>
+    </div>
+  </div>
+</div>

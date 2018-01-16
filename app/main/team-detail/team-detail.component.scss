@@ -1,0 +1,137 @@
+@import '../../../vars';
+
+.team-detail {
+    background-image: url('../../../assets/images/svgs/corner-bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.team-detail-header {
+    display: table;
+    padding: 40px;
+    margin: auto;
+}
+
+.desc {
+    overflow: visible;
+    direction: rtl;
+}
+
+.desc-set {
+
+}
+
+.team-header-name {
+    text-align: center;
+    padding: 10px;
+
+    @include title;
+
+    font-size: 300%;
+}
+
+.section-title {
+    padding: 40px 30px 10px 30px;
+
+    @include title;
+    
+    font-size: 250%;
+}
+
+.description {
+    padding: 20px 50px 20px 20px;
+}
+
+
+.team-info-name {
+    font-size: 150%;
+    text-align: right;
+    padding: 5px;
+}
+
+.team-info-focus {
+    color: $textlight;
+    text-align: right;
+}
+
+.team-info-founder {
+    text-align: right;
+    color: $textlight;
+}
+
+.team-info-desc {
+    padding: 10px 0px;
+}
+
+.team-info-members {
+    text-align: right;
+    color: $textlight;
+}
+
+.field-set {
+    width: 24%;
+    border-left: solid thin $secondary;
+    padding: 20px 0px;
+    color: $texthighlighted;
+    transition: 0.2s;
+
+    @include clickable;
+    
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.field {
+    font-size: 110%;
+    text-align: center;
+}
+
+.f-value {
+    display: table;
+    margin: auto;
+}
+
+.val-value {
+    font-size: 200%;
+    padding: 3px;
+}
+
+.val-unit {
+    font-size: 80%;
+}
+
+.lean {
+    text-align: right;
+}
+
+.graph-out {
+    display: table;
+    margin: auto;
+    padding: 0px 100px 100px 100px;
+}
+
+.selected {
+    background-color: $mixpps;
+}
+
+.selected-stat-title {
+
+    @include title;
+
+    font-size: 280%;
+    padding: 30px;
+    display: table;
+    margin: auto;
+}
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}

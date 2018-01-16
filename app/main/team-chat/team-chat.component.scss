@@ -1,0 +1,79 @@
+@import '../../../vars';
+
+.team-chatbox {
+    padding: 20px;
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.team-chatbox-instance {
+    margin: 30px 0px;
+}
+
+.team-chat-instance {
+    margin: 0px 20px;
+}
+
+
+
+.team-chat-message {
+    background-color: $mixpss;
+    padding: 5px 15px 15px 15px;
+}
+
+.team-chat-sender {
+    font-size: 110%;
+    color: $textlink;
+    padding: 3px 20px;
+    text-align: right;
+}
+
+.team-chat-announcement-content {
+    padding: 10px 30px;
+}
+
+.team-chat-message-info {
+    font-size: 80%;
+    text-align: right;
+    color: $textlight;
+}
+
+.team-chat-sender-image {
+    padding: 3px 20px;
+}
+
+.chat-instance-options {
+    text-align: right;
+    padding: 10px;
+    margin-right: 100px;
+}
+
+.chat-instance-details {
+    color: $textlight;
+    text-align: center;
+}
+
+.reply {
+    padding: 5px 5px 5px 40px;
+    font-size: 90%;
+
+    .team-chat-message {
+        background-color: $mixpps;
+    }
+
+    .team-chat-announcement-content {
+        padding: 5px 15px;
+    }
+}
+
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}

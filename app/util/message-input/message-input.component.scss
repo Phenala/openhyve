@@ -1,5 +1,9 @@
 @import '../../../vars';
 
+.message-input {
+    
+}
+
 .message-input textarea {
     background-color: $primary;
     border: none;
@@ -13,7 +17,18 @@
     display: inline-block;
     box-sizing: border-box;
     vertical-align: top;
+    resize: none;
     transition: 0.2s;
+}
+
+.minimized {
+    height: 0px;
+    overflow: hidden;
+
+    .side-button {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .message-input textarea:focus {
@@ -30,6 +45,7 @@
     box-sizing: border-box;
     background-size: cover;
     border-radius: 50%;
+    z-index: 50;
     transition: 0.3s;
 }
 
@@ -39,8 +55,10 @@
 }
 
 .side-button {
-    display: inline-block;
-    vertical-align: top;
+    text-align: right;
+    vertical-align: bottom;
+    position: relative;
+    top: 0px;
 }
 
 

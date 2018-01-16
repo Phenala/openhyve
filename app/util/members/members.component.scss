@@ -1,0 +1,38 @@
+@import '../../../vars';
+
+.members {
+    background-color: $mixpss;
+    height: 300px;
+    width: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.member-instance {
+    padding: 5px 5px 5px 15px;
+    transition: 0.2s;
+
+    &:hover {
+        padding-left: 20px;
+    }
+}
+
+
+.image {
+    padding: 10px;
+}
+
+.status {
+    color: $textlight;
+    font-size: 80%;
+}
+
+.admin {
+    background-color: $mixpps;
+    padding: 5px 5px 5px 5px;
+
+    
+    &:hover {
+        padding-left: 10px;
+    }
+}

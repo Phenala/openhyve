@@ -1,16 +1,22 @@
 <div>
   <div class='team-content'>
     <div class="team-header">
-      <div class="team-header-image">
-        <app-entity-image [scale]='3' ></app-entity-image>
-        <div class='team-header-title'>
-          Clarity
+      <app-tabs [tabNames]="tabs" (tabChange)='changeTab($event)' ></app-tabs>
+    </div>
+    <div class='tabset-enclosure'>
+      <div class='tabset' [ngStyle]='tabStyle'>
+        <div class='main-block-row-set tab'>
+          <div [ngStyle]='tabdivStyle'>
+            <app-team-chat></app-team-chat>
+          </div>
+          <div [ngStyle]='tabdivStyle'>
+            <app-team-projects></app-team-projects>
+          </div>
+          <div [ngStyle]='tabdivStyle'>
+            <app-team-detail></app-team-detail>
+          </div>
         </div>
       </div>
-      <app-tabs [tabNames]="['Projects', 'Members', 'Details']"></app-tabs>
-    </div>
-    <div>
-      <app-team-projects></app-team-projects>
     </div>
   </div>
 </div>

@@ -1,0 +1,23 @@
+@import '../../../vars';
+
+.team-info {
+    background-color: $primary;
+    min-height: 1000px;
+}
+
+.descriptor {
+    float: right;
+}
+
+.team-info-header {
+    display: table;
+    margin: auto;
+    padding: 20px;
+}
+
+.team-name {
+    font-family: $title;
+    @include title;
+    font-size: 400%;
+    text-align: center;
+}

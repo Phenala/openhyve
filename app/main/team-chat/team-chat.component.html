@@ -1,0 +1,64 @@
+<div class='team-chat'>
+  <div class='fill'>
+    <app-message-input [placeholder]='"Your Announcement"' ></app-message-input>
+  </div>
+  <div class='team-chatbox'>
+    <div *ngFor='let announcement of announcements, let num = index' class='team-chatbox-instance'>
+      <div  class='team-chat-instance'>
+        <div class='low-row-set'>
+          <div class='fill'>
+            <div class='team-chat-message'>
+              <div class='team-chat-sender'>
+                <app-entity-user [user]='announcement.mainMessage.sender' ></app-entity-user>
+              </div>
+              <div class='team-chat-announcement-content'>
+                {{announcement.mainMessage.message}}
+              </div>
+              <div class='team-chat-message-info'>
+                {{announcement.mainMessage.timestamp}}
+              </div>
+            </div>
+            <div>
+              <app-message-input [show]='replyPost == num' [focus]='replyPost == num'></app-message-input>
+            </div>
+          </div>
+          <div class='team-chat-sender-image'>
+            <app-entity-image></app-entity-image>
+          </div>
+        </div>
+        <div class='chat-instance-options'>
+          <app-button *ngIf='replyPost!=num' [label]='"Reply"' (click)='setReply(num)'></app-button>
+        </div>
+      </div>
+      <div *ngFor='let reply of announcement.replies' class='reply' >
+        <div  class='team-chat-instance'>
+          <div class='low-row-set'>
+            <div class='fill'>
+              <div class='team-chat-message'>
+                <div class='team-chat-sender'>
+                  <app-entity-user [user]='reply.sender' ></app-entity-user>
+                </div>
+                <div class='team-chat-announcement-content'>
+                  {{reply.message}}
+                </div>
+                <div class='team-chat-message-info'>
+                  {{reply.timestamp}}
+                </div>
+              </div>
+              <div>
+              </div>
+            </div>
+            <div class='team-chat-sender-image'>
+              <app-entity-image></app-entity-image>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='chat-instance-details'>
+        85 more replies <app-button [label]='"See All"' ></app-button>
+      </div>
+
+    </div>
+  </div>
+</div>

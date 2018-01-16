@@ -1,8 +1,9 @@
+import { UiService } from './services/ui.service';
 import { SearchService } from './services/search.service';
 import { ChatService } from './services/chat.service';
 import { ContactService } from './services/contact.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api';
@@ -33,6 +34,19 @@ import { TeamContentComponent } from './main/team-content/team-content.component
 import { TabsComponent } from './util/tabs/tabs.component';
 import { TeamProjectsComponent } from './main/team-projects/team-projects.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { EntityUserComponent } from './util/entity-user/entity-user.component';
+import { TeamDetailComponent } from './main/team-detail/team-detail.component';
+import { TeamChatComponent } from './main/team-chat/team-chat.component';
+import { TeamInfoComponent } from './main/team-info/team-info.component';
+import { EntityDescriptorComponent } from './util/entity-descriptor/entity-descriptor.component';
+import { MembersComponent } from './util/members/members.component';
+import { ButtonComponent } from './util/button/button.component';
+import { LineGraphComponent } from './util/line-graph/line-graph.component';
+import { OptionButtonComponent } from './util/option-button/option-button.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectsListComponent } from './main/projects-list/projects-list.component';
+import { ProgressComponent } from './util/progress/progress.component';
+import { ProjectContentComponent } from './main/project-content/project-content.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +73,20 @@ import { AppRoutingModule } from './/app-routing.module';
     TeamsListComponent,
     TeamContentComponent,
     TabsComponent,
-    TeamProjectsComponent
+    TeamProjectsComponent,
+    EntityUserComponent,
+    TeamDetailComponent,
+    TeamChatComponent,
+    TeamInfoComponent,
+    EntityDescriptorComponent,
+    MembersComponent,
+    ButtonComponent,
+    LineGraphComponent,
+    OptionButtonComponent,
+    ProjectsComponent,
+    ProjectsListComponent,
+    ProgressComponent,
+    ProjectContentComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +97,7 @@ import { AppRoutingModule } from './/app-routing.module';
     ),
     AppRoutingModule
   ],
-  providers: [ContactService, ChatService, SearchService],
+  providers: [ContactService, ChatService, SearchService, UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

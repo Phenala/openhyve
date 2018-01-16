@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Observable';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -10,7 +10,9 @@ export class TabsComponent implements OnInit {
 
   @Input() tabNames = [];
 
-  activeTab = 0;
+  @Output() tabChange: EventEmitter<Number>;
+
+  activeTab = 2;
   tabStyle = {
     width: ''
   };
@@ -19,17 +21,22 @@ export class TabsComponent implements OnInit {
     'margin-left': ''
   };
 
-  constructor() { }
+  constructor() {
+    this.tabChange = new EventEmitter<Number>();
+  }
 
   ngOnInit() {
     const val = 100 / this.tabNames.length;
     this.tabStyle.width = val + '%';
     this.underlineStyle.width = val + '%';
+    this.switchTo(this.activeTab);
   }
 
   switchTo(ind: number) {
     this.activeTab = ind;
     this.underlineStyle['margin-left'] = (100 * this.activeTab / this.tabNames.length) + '%';
+    this.tabChange.emit(this.activeTab);
   }
+
 
 }

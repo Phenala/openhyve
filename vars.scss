@@ -1,7 +1,7 @@
 /*colors*/
 
 $primary: #000;
-$secondary: #440;
+$secondary: #444;
 $converse: #eee;
 $text: #bbb;
 $textlight: #999;
@@ -10,11 +10,20 @@ $textdark: #222;
 $textlink: #78d;
 $feedbackprimary: #483;
 
+  /*derived*/
+
+$mixppps: mix($primary, $secondary, 90);
+$mixpps: mix($primary, $secondary, 70);
+$mixpss: mix($primary, $secondary, 30);
+$mixpsss: mix($primary, $secondary, 10);
+
 /*fonts*/
 
 $normal: Open Sans, serif;
 $head: Infinity;
 $title: Dense;
+
+$normalsize: 15px;
 
 /*values*/
 
@@ -28,7 +37,7 @@ $mobscreen: 700px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	border-radius: 100px;
+	border-radius: 50%;
 	width: $size;
 	height: $size;
 }
