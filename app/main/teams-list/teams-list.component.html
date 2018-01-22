@@ -1,11 +1,16 @@
 <div class='teams'>
   <div class='teams-box'>
-    <app-search-bar [tags]='"tag-full-width"'></app-search-bar>
-    <div class="my-teams">
-      <div class="my-teams-title">
-        My teams
+    <app-search-bar [tags]='"tag-full-width"' [searchtype]='"teams"'></app-search-bar>
+    <div class="my-teams" *ngIf='teamService.myteams.length > 0'>
+      <div class='row-set'>
+        <div class="my-teams-title fill">
+          My teams
+        </div>
+        <div>
+          <app-hyve-loader [scale]='0.3' *ngIf='teamService.isLoadingTeams'></app-hyve-loader>
+        </div>
       </div>
-      <div class='team-instance' *ngFor='let team of myteams'>
+      <div class='team-instance' *ngFor='let team of teamService.myteams, let num = index' (click)='selectTeam(team.id)' [ngClass]='{team_selected: teamService.selectedTeam == team.id}'>
         <div class='row-set'>
           <div>
             <app-entity-image></app-entity-image>
@@ -21,8 +26,9 @@
         </div>
       </div>
     </div>
+    <app-button [lean]='"right"' [icon]='"close-icon"' *ngIf='teamService.teams.length > 0' (click)='clearTeams()'></app-button>
     <div class="other-teams">
-      <div class='team-instance' *ngFor='let team of teams'>
+      <div class='team-instance' *ngFor='let team of teamService.teams'  (click)='selectTeam(team.id)' [ngClass]='{team_selected: teamService.selectedTeam == team.id}'>
         <div class="team-info-2">
           David Dundee is a member of this team.
         </div>
@@ -38,8 +44,8 @@
               {{team.focus}}
             </div>
             <div class="team-info">
-               <div>{{team.members.length + (team.members.length > 1 ? " Members":" Member")}}</div> 
-               <div> <app-entity-user></app-entity-user>, Cory Modden, Rath Redd, ... </div>
+               <div>{{team.memberCount + (team.memberCount > 1 ? " Members":" Member")}}</div> 
+               <div> <app-entity-user [user]='team.leader' ></app-entity-user>, Cory Modden, Rath Redd, ... </div>
                Projects: Thollus, Lilium
             </div>
           </div>

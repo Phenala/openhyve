@@ -2,7 +2,7 @@
   <div *ngFor='let user of users' class='member-instance' [ngClass]='{admin: user.meta.status == "Admin"}'>
     <div class='row-set'> 
       <div class='image'>
-        <app-entity-image></app-entity-image>
+        <app-entity-image [scale]='1.4'></app-entity-image>
       </div>
       <div>
         <div  class='username'>

@@ -1,6 +1,6 @@
 <div>
   <div class='team-project'>
-    <div *ngFor='let project of projects' class="project-instance">
+    <div *ngFor='let project of teamService.projects' class="project-instance">
       <div class='main-row-set'>
         <div>
           <app-entity-image [scale]='3'></app-entity-image>
@@ -16,7 +16,7 @@
             {{project.description}}
           </div>
           <div class='project-contributors'>
-            {{project.leader}}  <span *ngFor='let member of project.members'>, {{member}}</span> and {{project.contributors}} others.
+            {{project.leader}}  <span *ngFor='let member of teamService.projects.members'>, {{member}}</span> and {{project.contributors}} others.
           </div>
         </div>
     </div>

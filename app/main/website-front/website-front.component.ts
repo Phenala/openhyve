@@ -1,3 +1,5 @@
+import { UiService } from './../../services/ui.service';
+import { PageState } from './../../pagestates';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebsiteFrontComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ui: UiService) { }
 
   ngOnInit() {
+  }
+
+  switchToLogin() {
+    this.ui.homestate = 1;
   }
 
 }

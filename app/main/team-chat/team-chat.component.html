@@ -3,7 +3,7 @@
     <app-message-input [placeholder]='"Your Announcement"' ></app-message-input>
   </div>
   <div class='team-chatbox'>
-    <div *ngFor='let announcement of announcements, let num = index' class='team-chatbox-instance'>
+    <div *ngFor='let announcement of teamService.announcements, let num = index' class='team-chatbox-instance'>
       <div  class='team-chat-instance'>
         <div class='low-row-set'>
           <div class='fill'>

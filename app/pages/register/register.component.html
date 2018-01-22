@@ -1,0 +1,59 @@
+<div class='register'>
+    <div class="register-inputs">
+        <table>
+            <tr>
+                <td>
+                    <div class='register-title fill'>
+                        Welcome to openhyve
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class='block-row-set'>
+                        <div>
+                            <input placeholder="First Name">
+                        </div>
+                        <div>
+                            <input placeholder="Last Name">
+                        </div>
+                    </div>
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    <input placeholder="New Username">
+                </td>
+                <td>
+                    New data arr
+                    {{usernameStatus}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type='password' placeholder="New Password">
+                </td>
+                <td>
+                    {{passwordStatus}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type='password' placeholder="Confirm New Password">
+                </td>
+                <td>
+                    {{passwordStatus}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <app-button [label]='"Sign Up"' [lean]='"right"'></app-button>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

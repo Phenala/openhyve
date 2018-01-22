@@ -8,14 +8,14 @@
 }
 
 .my-teams {
-    padding: 5px;
-    background-color: lighten($secondary, 20%);
+    padding-bottom: 5px;
+    background-color: lighten($secondary, 15%);
 }
 
 .my-teams-title {
     font-family: $title;
     font-size: 200%;
-    padding: 5px 30px;
+    padding: 15px 30px;
     color: $textdark;
     text-transform: uppercase;
 }
@@ -23,10 +23,15 @@
 .team-instance {
     margin: 5px;
     padding: 10px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: $mixpss;
     transition: 0.2s;
 
     @include clickable;
+}
+
+.team_selected {
+    background-color: $primary;
+    margin-right: 0;
 }
 
 .team-instance:hover {

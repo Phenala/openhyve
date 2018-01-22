@@ -1,7 +1,7 @@
 @import '../../../vars';
 
 .button {
-    display: inline-block;
+    display: table;
     padding: 3px 10px;
 
     color: $text;
@@ -21,4 +21,16 @@
     }
 
     @include clickable;
+}
+
+.button-image {
+
+    img {
+        display: table;
+        margin: auto;
+        width: 30px;
+        padding: 3px;
+        vertical-align: center;
+    }
+
 }

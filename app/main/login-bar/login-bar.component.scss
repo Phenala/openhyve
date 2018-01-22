@@ -4,18 +4,53 @@ input {
     font-family: $normal;
 }
 
+.bg {
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url('../../../assets/images/backgrounds/hyve.png');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -100vh;
+
+    &:hover {
+
+    }
+}
+
+@each $bgval in 1,2,3,4 {
+
+    .bg#{$bgval} {
+        background-image: url('../../../assets/images/backgrounds/hyve#{$bgval}.png');
+        opacity: 0.5;
+        pointer-events: none;
+        animation: fader #{$bgval * 2 + 10}s infinite;
+        //animation-delay: #{$bgval * 4}s; 
+        opacity: 0;
+        z-index: -10;
+    }
+
+}
+
+@keyframes fader {
+    0%{opacity: 0}
+    50%{opacity: 1}
+    100%{opacity: 0}
+}
+
 .login-bar {
-    background-color: $primary;
-    width: 40vw;
+    width: 100vw;
     height: 100vh;
     transition: 1s;
 }
 
 .login-bar:hover {
-    width: 50vw;
+    //width: 60vw;
 }
 
 .sign-up {
+    transform: scale(1);
     padding: 40px;
     font-size: 110%;
     text-align: right;
@@ -33,12 +68,14 @@ input {
 .logo-img img {
     display: block;
     margin: auto;
+    width: 200px;
     margin-bottom: 30px;
 }
 
 .login-inputs {
-    padding-top: 20vh;
+    padding-top: 18.5vh;
     width: 300px;
+    transform: scale(1);
     margin: auto;
 }
 
@@ -53,6 +90,7 @@ input {
     border: none;
     font-size: 120%;
     padding: 20px 20px 10px 20px;
+    box-sizing: border-box;
     transition: 0.2s;
     border-bottom: solid medium $secondary;
 }
@@ -60,6 +98,10 @@ input {
 .textbox input:focus {
     background-color: rgba(255,255,255,0.1);
     outline: none;
+}
+
+.submit-button {
+    font-size: 140%;
 }
 
 .submit-button input {
@@ -75,11 +117,12 @@ input {
 
     &:focus {
         outline: none;
-        background-color: lighten($secondary, 20%);
+        background-color:$secondary, 20%;
     }
 
     &:active {
         background-color: darken($secondary, 10%);
+        transform: scale(0.95);
     }
 
     &:hover {

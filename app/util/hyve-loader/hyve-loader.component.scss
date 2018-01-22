@@ -1,0 +1,83 @@
+@import '../../../vars';
+
+.hyve-loader {
+    width: 300px;
+    height: 300px;
+    display: table;
+    margin: auto;
+    animation: rotAnim 30s infinite;
+
+    div {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.loader-enc {
+    margin-bottom: -100%;
+}
+
+.loader {
+    background-size: 100%;
+}
+
+.lcover {
+    background-image: url('../../../assets/images/svgs/loader-set/grad.svg');
+    transform: scale(1);
+}
+
+@each $val in 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 {
+
+    #loader#{$val} {
+        background-image: url('../../../assets/images/svgs/loader-set/#{$val}.svg');
+        animation: logoAnim #{($val + 5)/4}s infinite;
+    }
+
+    #Encloader#{$val} {
+        animation: rotAnim #{$val/10 + 20}s infinite;
+
+        @if ($val%2 == 0) {
+            animation: rotAnim2 #{$val/10 + 20}s infinite;
+        }
+    }
+
+}
+
+#loader16 {
+    animation: none;
+}
+
+@keyframes logoAnim {
+    20%{transform: scale(0.9)}
+    40%{transform: scale(0.9)}
+    50%{transform: scale(0.5)}
+    60%{transform: scale(0.5)}
+    80%{transform: scale(0.7)}
+    90%{transform: scale(0.7)}
+};
+
+@keyframes rotAnim {
+    5%{transform: rotate(0deg)}
+    10%{transform: rotate(120deg)}
+    20%{transform: rotate(120deg)}
+    25%{transform: rotate(-60deg)}
+    45%{transform: rotate(-60deg)}
+    50%{transform: rotate(60deg)}
+    65%{transform: rotate(60deg)}
+    70%{transform: rotate(180deg)}
+    85%{transform: rotate(180deg)}
+    90%{transform: rotate(0deg)}
+}
+
+@keyframes rotAnim2 {
+    5%{transform: rotate(0deg)}
+    10%{transform: rotate(-60deg)}
+    20%{transform: rotate(-60deg)}
+    25%{transform: rotate(60deg)}
+    45%{transform: rotate(60deg)}
+    50%{transform: rotate(120deg)}
+    65%{transform: rotate(120deg)}
+    70%{transform: rotate(60deg)}
+    85%{transform: rotate(60deg)}
+    90%{transform: rotate(0deg)}
+}

@@ -12,10 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
+  opaqueTns = {
+    opaque: this.chatService.messages.length > 0,
+    transparent: this.chatService.messages.length <= 0
+  };
+
   constructor(public chatService: ChatService) { }
 
   ngOnInit() {
-
+    //this.opaque = true;
   }
 
 }

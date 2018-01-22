@@ -1,0 +1,85 @@
+@import '../../../vars';
+
+
+.nav-set-enc {
+    overflow-wrap: none;
+    transition: 0.3s;
+
+    > div {
+        display: inline-block;
+        width: 300px;
+        box-sizing: border-box;
+    }
+}
+
+.scroll {
+    padding: 20px;
+    background-image: url('../../../assets/images/svgs/scroll-left.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $mixpss;
+    };
+}
+
+.scroll-left {
+}
+
+.scroll-right {
+    transform: rotate(180deg);
+}
+
+.overfl {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.overfl2 {
+
+    width: 0px;
+}
+
+.main_nav {
+    opacity: 1 !important;
+    border-bottom: solid medium $converse !important;
+}
+
+.nav-instance {
+    padding: 10px;
+    opacity: 0.5;
+    transition: 0.2s;
+    border-bottom: solid medium transparent;
+
+    @include clickable;
+
+    &:hover {
+        background-color: $mixpss;
+    }
+}
+
+.nav-desc {
+    color: $textlight;
+    padding: 10px 30px;
+}
+
+.past {
+    color: #007700 !important;
+}
+
+.future {
+    color: #0000ff !important;
+}
+
+.nav-val {
+    color: $texthighlighted;
+    font-size: 120%;
+}
+
+.nav-stat {
+    text-align: right;
+    padding: 0px 10px;
+    color: #ff8800;
+}

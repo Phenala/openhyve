@@ -2,6 +2,7 @@
   <div class='contacts'>
     <div class='contacts-box' [ngClass]='{active_contact_box: activeContact != null}'>
       <app-search-bar [tags]='"tag-full-width"' [searchtype]='"contacts"'></app-search-bar>
+      <app-hyve-loader [scale]='0.8'*ngIf='this.contactService.isContactsLoading'></app-hyve-loader>
       <div *ngFor='let user of contactService.contacts' class='contact-instance' (click)='openMessages(user.id)' [ngClass]='{active_contact: activeContact == user.id}'>
         <div class='contact-online-status'>
           {{user.online ? "Online" : "Last online " + user.lastOnline}}
@@ -31,7 +32,6 @@
           </div>
         </div>
       </div>
-      <app-loader *ngIf='this.contactService.isContactsLoading'></app-loader>
     </div>
   </div>
 </div>

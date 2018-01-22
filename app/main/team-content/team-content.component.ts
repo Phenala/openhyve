@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { TabStyle } from './../../pagestates';
+import { TeamService } from './../../services/team.service';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-team-content',
@@ -8,26 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class TeamContentComponent implements OnInit {
 
   tabOffset: number;
+  activeTab: number;
 
-  tabs = ['Announcements', 'Projects', 'Details'];
+  tabs = ['Announcements', 'Projects', 'Members', 'Details'];
+  tabteams = [ 'Details', 'Members', 'Projects'];
 
-  tabStyle = {
-    'width': this.tabs.length + '02%',
-    'margin-left': '0%'
-  };
+  tabStyle: TabStyle;
 
-  tabdivStyle = {
-    'width': (100 / this.tabs.length - 0.3) + '%'
-  };
-
-  constructor() { }
+  constructor(public teamService: TeamService) { }
 
   ngOnInit() {
 
   }
 
-  changeTab(tab: number) {
-    this.tabStyle['margin-left'] = '-' + tab + '00%';
+  changeTab(tabdata) {
+    this.tabStyle = tabdata.style;
+    this.activeTab = tabdata.tab;
   }
 
 }

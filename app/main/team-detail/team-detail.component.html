@@ -10,37 +10,25 @@
       {{team.name}}
     </div>
   </div>
-  <div class='main-row-set'>
-    <div>
-      <div class='section-title'>
-        Members
+  <div class='section-title lean'>
+    General
+  </div>
+  <div>
+    <div class='description'>
+      <div class='team-info-name'>
+        {{team.name}}
       </div>
-      <div>
-        <app-members></app-members>
+      <div class='team-info-focus'>
+        {{team.focus}}
       </div>
-    </div>
-    <div class='fill'>
-      <div class='section-title lean'>
-        General
+      <div class='team-info-desc'>
+        {{team.description}}
       </div>
-      <div>
-        <div class='description'>
-          <div class='team-info-name'>
-            {{team.name}}
-          </div>
-          <div class='team-info-focus'>
-            {{team.focus}}
-          </div>
-          <div class='team-info-desc'>
-            {{team.description}}
-          </div>
-          <div class='team-info-founder'>
-            Formed by <app-entity-user [user]='team.leader' ></app-entity-user>
-          </div>
-          <div class='team-info-members'>
-            {{team.memberCount}} members
-          </div>
-        </div>
+      <div class='team-info-founder'>
+        Formed by <app-entity-user [user]='team.leader' ></app-entity-user>
+      </div>
+      <div class='team-info-members'>
+        {{team.memberCount}} members
       </div>
     </div>
   </div>
@@ -56,7 +44,7 @@
         <div class='f-value'>
           <div class='row-set'>
             <div class='val-value'>
-              {{team[stat.target]}}
+              {{myTeam[stat.target]}}
             </div>
             <div class='val-unit'>
               {{stat.unit}}

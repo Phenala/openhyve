@@ -1,9 +1,12 @@
+import { TeamService } from './../../services/team.service';
 import { ContactService } from './../../services/contact.service';
 import { ChatService } from './../../services/chat.service';
 import { SearchService } from './../../services/search.service';
 import { Contact } from './../../service-values';
 import { ObservableInput, Observable } from 'rxjs/Observable';
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
+
+// tslint:disable: max-line-length
 
 @Component({
   selector: 'app-search-bar',
@@ -17,7 +20,8 @@ export class SearchBarComponent implements OnInit {
 
   inputValue: string;
 
-  constructor(private searchService: SearchService, private chatService: ChatService, private contactService: ContactService) {}
+  constructor(private searchService: SearchService, private chatService: ChatService, private contactService: ContactService,
+              private teamService: TeamService) {}
 
   ngOnInit(): void {
 
@@ -28,6 +32,9 @@ export class SearchBarComponent implements OnInit {
       case 'contacts':
         this.searchContact();
         break;
+      case 'teams':
+        this.teamService.searchTeams(this.inputValue);
+        break;
       case 'general':
         this.searchGeneral();
     }
@@ -36,7 +43,7 @@ export class SearchBarComponent implements OnInit {
   searchContact() {
     this.contactService.contacts = [];
     this.contactService.isContactsLoading = true;
-    if (this.inputValue != '') {
+    if (this.inputValue !== '') {
       this.searchService.searchContacts(this.inputValue).subscribe(
         result => {
           this.contactService.contacts = result;

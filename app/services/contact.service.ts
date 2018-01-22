@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 export class ContactService {
 
   private contactsUrl = 'api/contacts';
-  contacts: Contact[];
+  contacts: Contact[] = [];
   isContactsLoading: boolean;
 
   httpOptions = {
@@ -24,7 +24,7 @@ export class ContactService {
     const contactsubs = this.http.get<Contact[]>(this.contactsUrl).subscribe(contact => {
       this.contacts = contact;
       this.isContactsLoading = false;
-    })
+    });
   }
 
   prepareContact(contact: Contact) {

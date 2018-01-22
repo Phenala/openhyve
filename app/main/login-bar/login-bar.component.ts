@@ -1,3 +1,6 @@
+import { FormsModule } from '@angular/forms';
+import { LoginService } from './../../services/login.service';
+import { UiService } from './../../services/ui.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginBarComponent implements OnInit {
 
-  constructor() { }
+  bgs = [1, 2, 3, 4];
+  username: string;
+  password: string;
+
+  constructor(public ui: UiService, private loginService: LoginService) { }
 
   ngOnInit() {
+    this.ui.fullPage();
+  }
+
+  login() {
+    this.loginService.login(this.username, this.password);
   }
 
 }

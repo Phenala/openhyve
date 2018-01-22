@@ -1,19 +1,40 @@
 <div>
-  <div class='team-content'>
-    <div class="team-header">
-      <app-tabs [tabNames]="tabs" (tabChange)='changeTab($event)' ></app-tabs>
-    </div>
-    <div class='tabset-enclosure'>
-      <div class='tabset' [ngStyle]='tabStyle'>
-        <div class='main-block-row-set tab'>
-          <div [ngStyle]='tabdivStyle'>
-            <app-team-chat></app-team-chat>
+  <div class='team-content' >
+    <div *ngIf='teamService.selectedTeam != null'>
+      <div class="team-header">
+        <app-tabs [tabNames]="tabs"  (outStyle) = 'tabStyle' (tabChange)='changeTab($event)'  *ngIf='teamService.selectedTeamType == "myteam"'></app-tabs>
+        <app-tabs [tabNames]="tabteams"  (outStyle) = 'tabStyle' (tabChange)='changeTab($event)'  *ngIf='teamService.selectedTeamType == "team"'></app-tabs>
+      </div>
+      <div class='tabset-enclosure' *ngIf='teamService.selectedTeamType == "myteam"'>
+        <div class='tabset' [ngStyle]='tabStyle.outTabStyle'>
+          <div class='main-block-row-set tab'>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-team-chat></app-team-chat>
+            </div>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-team-projects></app-team-projects>
+            </div>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-members></app-members>
+            </div>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-team-detail></app-team-detail>
+            </div>
           </div>
-          <div [ngStyle]='tabdivStyle'>
-            <app-team-projects></app-team-projects>
-          </div>
-          <div [ngStyle]='tabdivStyle'>
-            <app-team-detail></app-team-detail>
+        </div>
+      </div>
+      <div class='tabset-enclosure'  *ngIf='teamService.selectedTeamType == "team"'>
+        <div class='tabset' [ngStyle]='tabStyle.outTabStyle'>
+          <div class='main-block-row-set tab'>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-team-detail></app-team-detail>
+            </div>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-members ></app-members>
+            </div>
+            <div [ngStyle]='tabStyle.outTabdivStyle'>
+              <app-team-projects></app-team-projects>
+            </div>
           </div>
         </div>
       </div>

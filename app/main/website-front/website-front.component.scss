@@ -1,6 +1,18 @@
-
+@import '../../../vars';
 
 .website-front{
-    background-image: url('../../../assets/images/backgrounds/openhyve-bg.jpg');
+    //background-image: url('../../../assets/images/backgrounds/openhyve-bg.jpg');
+    direction: rtl;
     height: 100%;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
+.view_fill {
+    width: 100vw;
+}
+
+div {
+    color: $primary;
+    font-size: 150%;
 }

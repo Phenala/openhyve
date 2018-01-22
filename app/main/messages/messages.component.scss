@@ -5,6 +5,16 @@
     height: 1000px;
 }
 
+.transparent {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.opaque {
+    opacity: 1;
+    transition: 0.2s;
+}
+
 .message-instance {
     background-color: $mixpss;
     padding: 20px;
@@ -66,6 +76,10 @@
 
 .spaced {
     margin-bottom: 30px;
+}
+
+.loader {
+    padding-top: 100px;
 }
 
 ::-webkit-scrollbar {

@@ -1,3 +1,5 @@
+import { LoginService } from './services/login.service';
+import { TeamService } from './services/team.service';
 import { UiService } from './services/ui.service';
 import { SearchService } from './services/search.service';
 import { ChatService } from './services/chat.service';
@@ -47,6 +49,12 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectsListComponent } from './main/projects-list/projects-list.component';
 import { ProgressComponent } from './util/progress/progress.component';
 import { ProjectContentComponent } from './main/project-content/project-content.component';
+import { HyveLoaderComponent } from './util/hyve-loader/hyve-loader.component';
+import { HorizontalNavComponent } from './util/horizontal-nav/horizontal-nav.component';
+import { ProjectTasksComponent } from './main/project-tasks/project-tasks.component';
+import { CifDirective } from './temp/cif.directive';
+import { RegisterComponent } from './pages/register/register.component';
+import { IconComponent } from './util/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +94,13 @@ import { ProjectContentComponent } from './main/project-content/project-content.
     ProjectsComponent,
     ProjectsListComponent,
     ProgressComponent,
-    ProjectContentComponent
+    ProjectContentComponent,
+    HyveLoaderComponent,
+    HorizontalNavComponent,
+    ProjectTasksComponent,
+    CifDirective,
+    RegisterComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +111,7 @@ import { ProjectContentComponent } from './main/project-content/project-content.
     ),
     AppRoutingModule
   ],
-  providers: [ContactService, ChatService, SearchService, UiService],
+  providers: [ContactService, ChatService, SearchService, UiService, TeamService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

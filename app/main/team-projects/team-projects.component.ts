@@ -1,3 +1,4 @@
+import { TeamService } from './../../services/team.service';
 import { Project } from './../../service-values';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,42 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamProjectsComponent implements OnInit {
 
-  projects: Project[] = [
-    {
-      id: 'sadjfhj',
-      name: 'The Zeta Project',
-      imageUrl: 'asldkfjkl',
-      coverImageUrl: 'lksdafjdskl',
-      description: 'A step toward achieving full dive Virtual Reality systems',
-      field: 'VR',
-      leader: 'Raymone David',
-      contributors: 32
-    },
-    {
-      id: 'sadjfhj',
-      name: 'Ditto Ditto',
-      imageUrl: 'asldkfjkl',
-      coverImageUrl: 'lksdafjdskl',
-      description: 'Aim is to create cool drones',
-      field: 'Automated Drone Research',
-      leader: 'Jason Reeds',
-      contributors: 32
-    },
-    {
-      id: 'sadjfhj',
-      name: 'Tango',
-      imageUrl: 'asldkfjkl',
-      coverImageUrl: 'lksdafjdskl',
-      description: 'Module for accelerated AI development',
-      field: 'Assistant AI',
-      leader: 'Coolio',
-      contributors: 32
-    }
-  ];
+  projects: Project[] = [];
 
-  constructor() { }
+  constructor(public teamService: TeamService) { }
 
   ngOnInit() {
+    this.teamService.getProjects();
   }
 
 }

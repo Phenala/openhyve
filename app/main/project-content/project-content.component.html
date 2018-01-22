@@ -1,5 +1,19 @@
 <div class='projects-content'>
   <div>
-
+    <div>
+      <app-tabs [tabNames]='tabs' (tabChange)='changeTab($event)'></app-tabs>
+    </div>
+    <div class='tabset-enclosure'>
+      <div class='tabset' [ngStyle]='tabStyle'>
+        <div class='main-block-row-set tab'>
+          <div [ngStyle]='tabdivStyle'>
+            <app-project-tasks></app-project-tasks>
+          </div>
+          <div [ngStyle]='tabdivStyle'>
+            <app-team-projects></app-team-projects>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

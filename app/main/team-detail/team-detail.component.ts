@@ -1,5 +1,6 @@
-import { Team } from './../../service-values';
-import { Component, OnInit } from '@angular/core';
+import { TeamService } from './../../services/team.service';
+import { Team, MyTeam } from './../../service-values';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-team-detail',
@@ -8,12 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamDetailComponent implements OnInit {
 
+
   teamStats = [
-    {
-      title: 'Team Activity',
-      unit: '%',
-      target: 'teamActivity'
-    },
     {
       title: 'Team Performance',
       unit: 'Tasks per Week',
@@ -33,33 +30,17 @@ export class TeamDetailComponent implements OnInit {
 
   selectedStat = this.teamStats[0];
 
-  team = {
-    id: 'sdaf',
-    name: 'Clarity',
-    imageUrl: 'asdfadsfdsaf',
-    // tslint:disable:max-line-length
-    description: 'A team of geologists dedicated to studying dinosaurs. No additional skills required to join, a degree in paleoanthropomorphology is sufficient. Any other extra skills are also greatly appreciated.',
-    memberCount: 12,
-    leader: {
-      id: 'asdf',
-      name: 'Donna Sparkles',
-      imageUrl: 'asdfadsf',
-      title: 'UI Designer',
-      description: 'Not related to Pink Sparkles',
-      skills: ['UI Design', 'UX Consulting']
-    },
-    focus: 'Geology',
-    teamActivity: 75,
-    teamPerformance: 14,
-    teamWeeklyProgress: 8,
-    teamEfficiency: 74,
-    teamScheduleAdherence: 92,
-    teamStatus: 'Good'
-  };
+  team: Team;
+  myTeam: MyTeam;
 
-  constructor() { }
+  constructor(public teamService: TeamService) { }
 
   ngOnInit() {
+    this.team = this.teamService.getSelectedTeam();
+    this.myTeam = this.teamService.getSelectedMyTeam();
+    if (this.myTeam != null) {
+      this.team = this.myTeam;
+    }
   }
 
   selectStat(val) {

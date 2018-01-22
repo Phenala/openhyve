@@ -1,0 +1,65 @@
+@import '../../../vars';
+
+.register {
+    background-color: $primary;
+    background-image: url('../../../assets/images/svgs/logo-bg.svg');
+    background-size: cover;
+    padding-top: 20vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+.register-title {
+    text-align: right;
+    padding:  60px 20px ;
+
+    @include title;
+
+    font-size: 240%;
+}
+
+.half {
+    width: 49.5%;
+}
+
+.register-inputs {
+
+    width: 500px;
+    display: table;
+    margin: auto;
+
+    input {
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        transition: 0.3s;
+        color: $text;
+        font-size: 110%;
+        border: none;
+        font-family: $normal;
+        border-bottom: solid medium $secondary;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    input:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.1);
+    }   
+}
+
+.iconer {
+    display: table;
+    margin: auto;
+    width: 100px;
+}
+
+.field-side {
+    width: 800px;
+}
+
+.status {
+    width: 0px;
+    overflow: hidden;
+    padding: 3px 10px;
+}

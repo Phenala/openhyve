@@ -2,7 +2,7 @@
 
 $primary: #000;
 $secondary: #444;
-$converse: #eee;
+$converse: #fff;
 $text: #bbb;
 $textlight: #999;
 $texthighlighted: #fff;
@@ -62,4 +62,8 @@ $mobscreen: 700px;
 
 @mixin bgcolor($alpha: 0.5) {
 	background-color: mix($primary, $secondary, $alpha);
+}
+
+@mixin shade {
+	
 }

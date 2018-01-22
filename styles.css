@@ -19,6 +19,10 @@ body {
 	height: 100%;
 }
 
+.view_fill {
+	width: 100vw;
+}
+
 .fill {
 	width: 100%;
 }

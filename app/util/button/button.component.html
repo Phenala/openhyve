@@ -1,3 +1,9 @@
-<div class='button'>
-  {{label}}
+<div class='button'  [ngStyle]='style'>
+  <div class='row-set'>
+    <div *ngIf='icon != ""' class='button-image'>
+      <img [src]='imagesource' [ngStyle]='imgstyle'>
+    </div>
+    <div>
+      {{label}}
+    </div>
 </div>

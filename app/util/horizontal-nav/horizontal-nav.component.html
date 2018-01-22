@@ -1,0 +1,33 @@
+<div class='horizintal-nav'>
+  <div class='nav-enc'>
+    <div class='row-set'>
+      <div class='scroll scroll-left' (click)='scroll(-1);'>
+      </div>
+      <div class='fill' id='viewer'   (click)='adjustWidth()'>
+        <div class='overfl'>
+          <div class='overfl2'>
+            <div class='block-row-set nav-set-enc' [ngStyle]='navenc'>
+              <div *ngFor='let nav of navValues, let num = index' class='nav-instance' [ngClass]='{main_nav: num == navIndex}' (click)='setScroll(num)'>
+                <div class='row-set'>
+                  <div class='nav-desc'>
+                    {{nav.descriptor}}
+                  </div>
+                  <div>
+                    <div class='nav-val'> 
+                      {{nav.value}}
+                    </div>
+                    <div class='nav-stat' [ngClass]='{past: nav.status == meta.past, future: nav.status == meta.future}'>
+                      {{nav.status}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='scroll scroll-right' (click)='scroll(1);'>
+      </div>
+    </div>
+  </div>
+</div>

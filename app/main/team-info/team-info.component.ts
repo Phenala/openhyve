@@ -12,6 +12,7 @@ export class TeamInfoComponent implements OnInit {
     id: 'sdaf',
     name: 'Clarity',
     imageUrl: 'asdfadsfdsaf',
+    visibility: false,
     description: 'A team of geologists dedicated to studying dinosaurs',
     leader: {
       id: 'asdf',

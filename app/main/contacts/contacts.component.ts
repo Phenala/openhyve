@@ -57,4 +57,8 @@ export class ContactsComponent implements OnInit {
     this.chatService.getMessages(id);
   }
 
+  testfunct() {
+    console.log('Rack city');
+  }
+
 }

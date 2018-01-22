@@ -1,0 +1,10 @@
+@import '../../../vars';
+
+
+
+.set-header {
+    padding: 30px 30px 10px 30px;
+    font-size: 250%;
+
+    @include title;
+}

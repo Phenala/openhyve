@@ -4,3 +4,22 @@
     background-color: $primary;
     height: 90vh;
 }
+
+
+
+.tabset-enclosure {
+    overflow: hidden;
+}
+
+.tabset {
+    width: 300%;
+    transition: 0.6s;
+}
+
+.tab > div {
+    width: 33.1%;
+    box-sizing: border-box;
+    height: 88vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

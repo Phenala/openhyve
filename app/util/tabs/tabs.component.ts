@@ -10,9 +10,20 @@ export class TabsComponent implements OnInit {
 
   @Input() tabNames = [];
 
-  @Output() tabChange: EventEmitter<Number>;
+  @Output() tabChange: EventEmitter<object>;
 
-  activeTab = 2;
+  outStyle = {
+    outTabStyle: {
+      width: '0%',
+      marginLeft: '0%'
+    },
+    outTabdivStyle: {
+      width: '0%'
+    }
+  };
+
+  activeTab = 0;
+
   tabStyle = {
     width: ''
   };
@@ -20,6 +31,7 @@ export class TabsComponent implements OnInit {
     width: '',
     'margin-left': ''
   };
+
 
   constructor() {
     this.tabChange = new EventEmitter<Number>();
@@ -29,13 +41,16 @@ export class TabsComponent implements OnInit {
     const val = 100 / this.tabNames.length;
     this.tabStyle.width = val + '%';
     this.underlineStyle.width = val + '%';
+    this.outStyle.outTabStyle.width = this.tabNames.length + '03.5%';
+    this.outStyle.outTabdivStyle.width = (100 / this.tabNames.length - 0.3) + '%';
     this.switchTo(this.activeTab);
   }
 
   switchTo(ind: number) {
     this.activeTab = ind;
     this.underlineStyle['margin-left'] = (100 * this.activeTab / this.tabNames.length) + '%';
-    this.tabChange.emit(this.activeTab);
+    this.outStyle.outTabStyle.marginLeft = '-' + ind + '00%';
+    this.tabChange.emit({ tab: this.activeTab, style: this.outStyle});
   }
 
 

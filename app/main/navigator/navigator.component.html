@@ -1,4 +1,4 @@
-<nav class="navigator-set"> 
+<nav class="navigator-set" *ngIf='!ui.disableNavigator'> 
     <div class='navigator' [ngClass]='{nav_open: ui.navigatorIsOpen}'>
       <div class='navigator-bg'>
       </div>
@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class='nav-icon mob-icon' >
-            <img src="{{getCurrentPage().iconlink}}">
+            <img src="{{getCurrentPage()?.iconlink}}">
           </div>
         </div>
         <a  *ngFor='let page of navigation' [routerLink]='page.routerlink'>

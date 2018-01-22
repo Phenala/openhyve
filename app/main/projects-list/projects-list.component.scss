@@ -8,6 +8,7 @@
 
 .my-projects-set {
     background-color: lighten($secondary, 15%);
+    padding-bottom: 5px;
 }
 
 .list-title {
@@ -20,8 +21,9 @@
 }
 
 .my-project-instance {
-    background-color: $mixpps;
+    background-color: $mixpss;
     padding: 10px;
+    margin: 10px;
     transition: 0.3s;
 
     &:hover {

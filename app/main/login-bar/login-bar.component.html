@@ -1,21 +1,23 @@
 <div>
   <div class='login-bar'>
+    <div class='bg'>
+    </div>
     <div class="sign-up">
-      Not a member? <span class='sign-up-link'> Sign up</span>
+      Not a member? <a [routerLink]='"/register"'><span class='sign-up-link'> Sign up</span></a>
     </div>
     <div class='login-inputs'>
-      <div  class='logo-img'>
-        <img src='../../../assets/images/svgs/logo.svg'/>
-      </div>
-      <div  class='textbox'>
-        <input class='username-input' placeholder="Username">
-      </div>
-      <div  class='textbox'>
-        <input type='password' placeholder="Password">
-      </div>
-      <div  class='submit-button'>
-        <input type='button' value='Login'>
-      </div>
+        <div  class='logo-img'>
+          <img src='../../../assets/images/svgs/logo.svg'/>
+        </div>
+        <div  class='textbox'>
+          <input class='username-input' placeholder="Username" [(ngModel)]='username'>
+        </div>
+        <div  class='textbox'>
+          <input type='password' placeholder="Password" [(ngModel)]='password'>
+        </div>
+        <div  class='submit-button'>
+          <app-button [label]='"Log In"' [lean]='"center"' (click)='login()'></app-button>
+        </div>
     </div>
   </div>
 </div>

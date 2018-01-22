@@ -1,3 +1,5 @@
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 import { ChatComponent } from './pages/chat/chat.component';
@@ -9,6 +11,8 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'teams', component: TeamsComponent},
   { path: 'projects', component: ProjectsComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
   { path: '', redirectTo: '/chat', pathMatch: 'full'}
 ];
 

@@ -1,17 +1,25 @@
 
+
+export class LoginResponse {
+    status: boolean;
+    token: string;
+    errorMessage: string;
+}
+
+
+
+
+
+
 export class Team {
     id: string;
     name: string;
     imageUrl: string;
     description: string;
+    visibility: boolean;
     leader: User;
     focus: string;
     memberCount: number;
-}
-
-export class TeamDetailed extends Team {
-    members: User[];
-    projects: Project[];
 }
 
 export class Message {
@@ -30,16 +38,31 @@ export class Announcement {
     mainMessage: TeamChatMessage;
     replies: TeamChatMessage[];
 }
+/*
+MyTeam[]
+[Team[], MyTeam[]];
+Announcement[];
+Project[];
+User[];
+MyProject[]
+[Project[], MyProject[]]
+*/
 
-export class MyTeam extends TeamDetailed {
-    chatbox: Announcement[];
-    teamActivity: number;
+// returns when requesting the list of teams that the user is a member of
+export class MyTeam extends Team {
     teamPerformance: number;
+    teamPerformanceChange: number;
     teamWeeklyProgress: number;
-    teamEfficiency: number;
+    teamWeeklyProgressChange: number;
     teamScheduleAdherence: number;
+    teamScheduleAdherenceChange: number;
     teamStatus: string;
     unseenAnnouncements: number;
+}
+
+export class SearchTeams {
+    teams: Team[];
+    myteams: MyTeam[];
 }
 
 export class Graph {
@@ -56,10 +79,6 @@ export class User {
     description: string;
 }
 
-export class UserDetailed extends User {
-    projects: Project[];
-}
-
 export class Contact extends User {
 
     online: boolean;
@@ -70,7 +89,6 @@ export class Contact extends User {
 
 }
 
-
 export class Task {
     id: string;
     number: number;
@@ -79,10 +97,11 @@ export class Task {
     priority: string;
     tag: string[];
     pitches: string[];
-    progress: number;
+    inprogress: boolean;
     deadline: number;
     assigner: User;
     assignee: User;
+    assigneeTeam: Team;
     supervisor: User;
     transferRequests: string[];
     completed: boolean;
@@ -103,21 +122,14 @@ export class Project {
     id: string;
     name: string;
     imageUrl: string;
-    coverImageUrl: string;
     description: string;
     field: string;
-    leader: string;
+    leader: User;
     contributors: number;
 }
 
-export class ProjectDetailed extends Project {
-    teams: Team[];
-    members: User[];
-}
-
-export class MyProject extends ProjectDetailed {
-    completion: 42;
-    allStages: string[];//['Research', 'Design', 'Implementation', 'Testing', 'Deployment'];
+export class MyProject extends Project {
+    allStages: string[]; // ['Research', 'Design', 'Implementation', 'Testing', 'Deployment'];
     currentStage: number;
     stageCompletion: number;
     sets: Set[];
