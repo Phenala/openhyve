@@ -1,3 +1,4 @@
+import { UiService } from './../../services/ui.service';
 import { TeamService } from './../../services/team.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsListComponent implements OnInit {
 
-  constructor(public teamService: TeamService) { }
+  constructor(public teamService: TeamService, public ui: UiService) { }
 
   ngOnInit() {
     this.teamService.getMyTeams();

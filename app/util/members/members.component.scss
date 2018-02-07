@@ -6,6 +6,14 @@
     font-size: 120%;
 }
 
+.member-title {
+    padding: 15px;
+
+    @include title;
+
+    font-size: 170%;
+}
+
 .member-instance {
     padding: 5px 5px 5px 15px;
     transition: 0.2s;

@@ -2,10 +2,31 @@
 
 .tabs {
     width: 100%;
+
+    // &:hover {
+
+    //     .scaler {
+    //         height: 50px;
+    //         transition-delay: 0s;
+    //     }
+        
+    //     .underline {
+    //         height: 5px;
+    //         background-color: $secondary;
+    //         transition-delay: 0s;
+    //     }
+    // }
+}
+
+.scaler {
+    overflow: hidden;
+    transition: 0.3s;
+    transition-delay: 2s;
 }
 
 .tab-title {
     width: 33.33%;
+    // height: 0px;
     text-align: center;
     font-size: 200%;
     padding: 10px 20px;
@@ -33,7 +54,7 @@
 }
 
 .underline-thumb {
-    background-color: lighten($secondary, 20%);
+    background-color: $accent;
     height: 100%;
     width: 33.33%;
     transition: 0.2s;

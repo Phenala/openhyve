@@ -1,10 +1,5 @@
 @import '../../../vars';
 
-div {
-	font-family: $normal;
-	display: inline-block;
-	vertical-align: middle;
-}
 
 .searchinput {
 	margin-right: -34px;
@@ -18,7 +13,7 @@ div {
 	font-size: 110%;
 	background-color: transparent;
 	border: none;
-	border-bottom: solid medium $secondary;
+	border-bottom: solid medium $accent;
 	transition: 0.4s;
 	box-sizing: border-box;
 }
@@ -29,11 +24,14 @@ div {
 	background-color: rgba(0,0,0,0.6);
 }
 
+.search {
+
+}
+
 .searchicon {
-	background-image: url('../../../assets/images/search.png');
-	background-size: 70%;
-	background-repeat: no-repeat;
-	background-position: center;
+	font-family: $normal;
+	display: inline-block;
+	vertical-align: middle;
 	border-radius: 50%;
 	margin-top: -2px;
 	width: 30px;
@@ -42,9 +40,89 @@ div {
 	height: 30px;
 }
 
+.search-res-enc {
+	display: block;
+	transition-delay: 2s;
+}
+
+.search-res {
+	width: 400px;
+	box-sizing: border-box;
+	background-color: $secondary;
+	transform: scale(1);
+	position: absolute;
+	z-index: 10;
+}
+
+.result {
+	padding: 10px;
+
+	@include clickable;
+
+	&:hover {
+		background-color: $mixpps;
+	}
+}
+
+.search-res-name {
+	font-size: 120%;	
+	padding: 10px;
+}
+
+.search-type {
+	color: $textlight;
+	text-transform: capitalize;
+}
+
+
+
+.right {
+	display: table;
+	margin-left: auto;
+}
+
+.switcher {
+	display: none;
+}
+
+.flip {
+	transform: rotate(180deg);
+}
+
+.smooth {
+	transition: 0.3s;
+}
+
+.searchiconsmall {
+	margin: auto;
+	display: table;
+	margin-top: 0px;
+	height: 50px;
+	padding-top: 25px;
+	transform: scale(1.5);
+	transition: 0.2s;
+
+	@include clickable;
+
+	&:hover {
+		transform: scale(1.6);
+	}
+}
+
+.narrow {
+	
+	div {
+	}
+	
+}
+
 .tag-full-width {
 
 	display: block;
+
+	.switcher {
+		display: table;
+	}
 
 	.searchinput {
 		display: block;

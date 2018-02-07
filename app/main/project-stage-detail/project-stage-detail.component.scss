@@ -1,0 +1,52 @@
+@import '../../../vars';
+
+
+.stage-detail {
+    padding: 40px 0px 200px 0px;
+}
+
+.stage-num {
+    font-size: 140%;
+}
+
+.stage-title {
+    font-size: 120%;
+    padding: 0px 30px;
+    color: $textlight;
+}
+
+.stage-title-block div {
+    padding: 20px;
+}
+
+.stage-num-dets {
+    padding: 20px;
+    background-color: $mixpps;
+}
+
+.stage-dets {
+    div {
+        padding: 10px 40px;
+    }
+}
+
+.stage-date-block {
+    padding: 40px 0px 5px 0px;
+
+    div {
+        padding: 0px 10px;
+    }
+}
+
+.right {
+    text-align: right;
+} 
+
+.half-fill {
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.num {
+    @include title;
+}

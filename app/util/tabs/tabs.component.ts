@@ -41,8 +41,8 @@ export class TabsComponent implements OnInit {
     const val = 100 / this.tabNames.length;
     this.tabStyle.width = val + '%';
     this.underlineStyle.width = val + '%';
-    this.outStyle.outTabStyle.width = this.tabNames.length + '03.5%';
-    this.outStyle.outTabdivStyle.width = (100 / this.tabNames.length - 0.3) + '%';
+    this.outStyle.outTabStyle.width = ((this.tabNames.length * 100) + (this.tabNames.length * 0.7)) + '%';
+    this.outStyle.outTabdivStyle.width = (100 / this.tabNames.length - (1 / this.tabNames.length)) + '%';
     this.switchTo(this.activeTab);
   }
 

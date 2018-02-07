@@ -35,7 +35,7 @@ $f: #fff;
     display: inline-block;
     vertical-align: middle;
     @include circle-picture($naviconsize);
-    background-color: $secondary;
+    background-color: $mixpps;
     margin: 10px 0px; 
     overflow: hidden;
     transition: 0.2s;
@@ -72,7 +72,8 @@ $f: #fff;
     }
 
     .nav-bar:hover {
-        background-color: $secondary;
+        background-color: $mixpsss;
+        color: $converse;
     }
 
     .nav-bar:active {
@@ -89,7 +90,7 @@ $f: #fff;
     }
     
     .currentpage {
-        background-color: lighten($primary, 20%);
+        border-left: solid medium $accent;
     }
 
     .currentpage .nav-icon {

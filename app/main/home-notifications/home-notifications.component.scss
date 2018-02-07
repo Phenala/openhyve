@@ -1,0 +1,15 @@
+@import '../../../vars';
+
+.notification {
+    padding: 20px;
+}
+
+.notification-detail {
+    padding: 10px;
+}
+
+.notifications-box {
+    background-color: $secondary;
+    width: 500px;
+    height: 100vh;
+}

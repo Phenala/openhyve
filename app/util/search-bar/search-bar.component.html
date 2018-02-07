@@ -1,6 +1,32 @@
-<div [ngClass]='tags'>
-	<div  class='searchinput'>
-		<input type='text' placeholder='Search' (keyup)='search()' [(ngModel)]='this.inputValue'>
-		<div class='searchicon'></div>
+<div class='search' [ngClass]='tags'>
+	<div  class='searchinput' [ngClass]='{narrow: !ui.sideNavIsOpen}'>
+		<input type='text' *ngIf='checkVis()' (blur)='closeResults()' placeholder='Search' (keyup)='search()' (click)='openSideNav()' [(ngModel)]='this.inputValue'>
+		<div class='searchicon' [ngClass]='{searchiconsmall: !checkVis()}'>
+			<app-icon [scale]='0.7' [src]='"search-icon"' (click)='openSideNav()' ></app-icon>
+		</div>
+		<div>
+			<div class='switcher right'>
+				<div class='smooth' [ngClass]='{flip: !ui.sideNavIsOpen}'>
+					<app-icon [scale]='0.8' [src]='"scroll-left"' (click)='toggleSideNav()' ></app-icon>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='search-res-enc' *ngIf='tags != "tag-full-width" && suggest'>
+		<div class='search-res'>
+			<div class='result' *ngFor='let value of searchResults'>
+				<div class='row-set'>
+					<div>
+						<app-entity-image [scale]='0.85'></app-entity-image>
+					</div>
+					<div class='search-res-name fill'>
+						{{value.name}}
+					</div>
+					<div class='search-type'>
+						{{value.type}}
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

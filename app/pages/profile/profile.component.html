@@ -1,0 +1,137 @@
+<div class='scr-enc'>
+    <div class='scr'>
+        <div class='max-width-set'>
+            <div class='profile'>
+                <div class='profile-title'>
+                    My Profile
+                </div>
+                <div class='low-row-set center'>
+                    <div>
+                        <app-entity-image [scale]='4'></app-entity-image>
+                    </div>
+                </div>
+                <div>
+                    <app-upload-image></app-upload-image>
+                </div>
+                <div class='details center'>
+                    <div class='row-set'>
+                        <div>
+                            <input type='text' [(ngModel)]='profileData.firstName'/><input type='text' [(ngModel)]='profileData.lastName'/>
+                        </div>
+                        <div class='edit'>
+                            <app-icon [scale]='0.7' [src]='"edit-icon"' ></app-icon>
+                        </div>
+                    </div>
+                    <table class="center">
+                        <tr>
+                            <th>
+                                Title
+                            </th>
+                            <td>
+                                <div class='row-set'>
+                                    <div>
+                                        <input type="text" [(ngModel)]='profileData.title'/>
+                                    </div>
+                                    <div class='edit'>
+                                        <app-icon [scale]='0.7' [src]='"edit-icon"' ></app-icon>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Email
+                            </th>
+                            <td>
+                                <div class='row-set'>
+                                    <div>
+                                        <input type="text" [(ngModel)]='profileData.email'/>
+                                    </div>
+                                    <div class='edit'>
+                                        <app-icon [scale]='0.7' [src]='"edit-icon"' ></app-icon>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Skills
+                            </th>
+                            <td>
+                                <div class=row-set>
+                                    <div>
+                                        <input type='text' [(ngModel)]='profile.newSkill'/>
+                                    </div>
+                                    <div class='edit'>
+                                        <app-icon [scale]='0.7' [src]='"add-icon"'  (click)='addSkill()'  ></app-icon>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <div class='micrify'>
+                                    <div class='skill-set'>
+                                        <div class='skill' *ngFor='let skill of profileData.skills, let num = index'>
+                                            <div class='row-set'>
+                                                <div>
+                                                    {{skill}}
+                                                </div>
+                                                <div class='edit'>
+                                                    <app-icon [src]='"close-icon"' [scale]='0.5' (click)='deleteSkill(num)'></app-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='holder'>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Bio
+                            </th>
+                            <td>
+                                <div class='limit'>
+                                    <textarea rows='5' [(ngModel)]='profileData.description'>
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class='holder'>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Visibility
+                            </th>
+                            <td>
+                                <select>
+                                    <option>EveryOne</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class='changes'>
+                        <div class='row-set'>
+                            <div class='fill'>
+                            </div>
+                            <div>
+                                <app-button [icon]='"close-icon"' [label]='"Discard"'></app-button>
+                            </div>
+                            <div>
+                                <app-button [icon]='"tick-icon"' [label]='"Apply"'></app-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

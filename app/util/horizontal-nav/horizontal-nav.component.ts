@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HorizontalNavVal } from './../../service-values';
+import { of } from 'rxjs/observable/of';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-horizontal-nav',
@@ -7,75 +9,73 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HorizontalNavComponent implements OnInit {
 
-  navValues = [{
-    descriptor: 'Set 10',
-    value: 'Controller Testing',
-    status: 'Complete'
-  },
-  {
-    descriptor: 'Set 11',
-    value: 'Database Installation',
-    status: 'Complete'
-  },
-  {
-    descriptor: 'Set 12',
-    value: 'Studio Demolition',
-    status: 'In Progress'
-  },
-  {
-    descriptor: 'Set 13',
-    value: 'Duck Hunting',
-    status: 'Due'
-  },
-  {
-    descriptor: 'Set 14',
-    value: 'Shoe Design',
-    status: 'Due'
-  },
-  ];
+  @Output() selectNav: EventEmitter<string> = new EventEmitter<string>();
+  @Input() navValues: HorizontalNavVal[];
+  @Input() updateVals: EventEmitter<HorizontalNavVal[]>;
+
+  elementWidth = 300;
 
   meta = {
-    valid: 'In Progress',
+    valid: 'In progress',
     past: 'Complete',
     future: 'Due'
   };
 
-  elementWidth = 300;
+  loadingNav = false;
 
   navenc = {
-    width: '',
-    marginLeft: ''
+    width: '100%',
+    marginLeft: '0px'
   };
 
-  navIndex = this.navValues.indexOf(this.navValues.find((val) => val.status === this.meta.valid));
+  navIndex = 0;
 
   constructor() { }
 
   ngOnInit() {
-    this.adjustWidth();
+    this.loadingNav = true;
+    if (this.updateVals != null) {
+      this.updateVals.subscribe((navval) => {
+        this.navValues = navval;
+        this.adjustWidth();
+        this.navIndex = this.navValues.indexOf(this.navValues.find((val) => val.status === this.meta.valid));
+        this.emit();
+      });
+    }
   }
 
   adjustWidth() {
     const windowWidth = document.getElementById('viewer').offsetWidth;
 
     this.navenc.width = (this.navValues.length * this.elementWidth) + 'px';
-    console.log('Wala' + windowWidth);
+    this.navenc.width = '100000px';
 
     const hidwidth = this.navIndex * this.elementWidth;
     const showwidth = (windowWidth - this.elementWidth) / 2;
     const offset = -1 * Math.max(0, Math.min(((this.navValues.length) * this.elementWidth - windowWidth), (hidwidth - showwidth)));
     this.navenc.marginLeft = offset + 'px';
+    this.loadingNav = false;
   }
 
   scroll(val) {
     this.navIndex += val;
     this.navIndex = Math.max(0, Math.min(this.navValues.length - 1, this.navIndex));
     this.adjustWidth();
+    this.emit();
   }
 
   setScroll(val) {
     this.navIndex = val;
     this.navIndex = Math.max(0, Math.min(this.navValues.length - 1, this.navIndex));
     this.adjustWidth();
+  }
+
+  clicked(val) {
+    this.setScroll(val);
+    this.emit();
+  }
+
+  emit() {
+    this.selectNav.emit(this.navValues[this.navIndex].id);
   }
 }

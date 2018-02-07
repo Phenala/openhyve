@@ -9,6 +9,7 @@ export class LoginService {
   token = '';
   loginurl = 'api/loginRes';
   signupurl = 'api/signupRes';
+  usernamecheckurl = 'api/usernameCheck';
 
   constructor(private http: HttpClient) { }
 
@@ -29,9 +30,11 @@ export class LoginService {
   }
 
   signup(firstname: string, lastname: string, username: string, password: string) {
-    this.http.get<boolean>(this.signupurl).toPromise().then(
-      
-    );
+    return this.http.get<boolean>(this.signupurl).toPromise();
+  }
+
+  checkUserName(username: string) {
+    return this.http.get(this.usernamecheckurl).toPromise();
   }
 
 }

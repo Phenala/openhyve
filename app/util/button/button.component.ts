@@ -11,8 +11,11 @@ export class ButtonComponent implements OnInit {
   @Input() lean = 'Right';
   @Input() icon = '';
   @Input() scale = 1;
+  @Input() type = 0;
 
   imagesource = '';
+
+  classes = ['', 'button1', 'button2', 'button3'];
 
   style = {};
 

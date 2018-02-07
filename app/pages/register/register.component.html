@@ -1,59 +1,73 @@
 <div class='register'>
     <div class="register-inputs">
-        <table>
+        <table  *ngIf='register.registrationStatus == 0'>
             <tr>
-                <td>
+                <td colspan="3">
                     <div class='register-title fill'>
                         Welcome to openhyve
                     </div>
                 </td>
-                <td>
-                </td>
             </tr>
             <tr>
+                <td [ngClass]='{invalid_field: !register.firstnameValid}'>
+                    <input placeholder="First Name" (keyup)='this.register.firstnameValid = true' [(ngModel)]='this.register.firstname'>
+                </td>
+                <td [ngClass]='{invalid_field: !register.lastnameValid}'>
+                    <input placeholder="Last Name" (keyup)='this.register.lastnameValid = true' [(ngModel)]='this.register.lastname'>
+                </td>
                 <td>
-                    <div class='block-row-set'>
-                        <div>
-                            <input placeholder="First Name">
+                </td>               
+            </tr>
+            <tr>
+                <td  colspan="2"  [ngClass]='{valid_field: register.usernameStatus == 1 && !register.usernameStatusLoading && register.username != "", invalid_field: register.usernameStatus == 2 && !register.usernameStatusLoading && register.username != "" || !register.usernameValid}'>
+                    <input placeholder="New Username" [(ngModel)]='register.username' (keyup)='checkUserNameExistence()'>
+                </td>
+                <td class="status" *ngIf='register.username != ""'>
+                    <div class="status-in" [ngStyle]='this.register.usernameStatusStyle'>
+                        <div class='loader' *ngIf='this.register.usernameStatusLoading'>
+                            <app-hyve-loader [lean]='"left"' [scale]='0.3'></app-hyve-loader>
                         </div>
-                        <div>
-                            <input placeholder="Last Name">
+                        <div class='midder'  *ngIf='!this.register.usernameStatusLoading'>
+                            {{this.register.usernameStatus ? register.usernameAvailable : register.usernameTakenWarning}}
                         </div>
                     </div>
-                </td>                
-            </tr>
-            <tr>
-                <td>
-                    <input placeholder="New Username">
-                </td>
-                <td>
-                    New data arr
-                    {{usernameStatus}}
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input type='password' placeholder="New Password">
+                <td  colspan="2" [ngClass]='{valid_field: register.passwordStrength == 5, invalid_field: register.passwordStrength != 5 && register.passwordStrength > 0 || !register.passwordValid}'>
+                    <input type='password' placeholder="New Password" [(ngModel)]='register.password' (keyup)='checkPasswordStrength()'>
                 </td>
-                <td>
-                    {{passwordStatus}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type='password' placeholder="Confirm New Password">
-                </td>
-                <td>
-                    {{passwordStatus}}
+                <td class="status">
+                    <div class="status-in">
+                        <div class='midder'>
+                            Password Strength: {{register.passwordStrength > 4 ? "Strong" : "Weak"}}
+                        </div>
+                        <app-gauge [update]='gaugeRefresh' [value]='register.passwordStrength'></app-gauge>
+                    </div>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <app-button [label]='"Sign Up"' [lean]='"right"'></app-button>
+                <td colspan="2" [ngClass]='{valid_field: register.password == register.cpassword && register.cpassword != "", invalid_field: register.password != register.cpassword && register.cpassword != "" || !register.cpasswordValid}'>
+                    <input type='password' placeholder="Confirm New Password" (keyup)='this.register.cpasswordValid = true' [(ngModel)]='register.cpassword'>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <app-button [label]='"Sign Up"' [lean]='"right"' (click)='signup()'></app-button>
                 </td>
                 <td>
                 </td>
             </tr>
         </table>
+        <div class='logosigns'>
+            <app-hyve-loader *ngIf='register.registrationStatus == 1'></app-hyve-loader>
+            <app-icon  *ngIf='register.registrationStatus == 2' [src]='"logo"' [lean]='"center"' [scale]='3.5' ></app-icon>
+        </div>
+        <div class='result' *ngIf='register.registrationStatus == 2 || register.registrationStatus == 1'>
+            {{["", "Registering...","Registration Successful"][register.registrationStatus]}}
+        </div>
+        <div class='result-detail' *ngIf='register.registrationStatus == 2'>
+            You are now a member of OpenHyve. <a [routerLink]='"/login"'><span class="link">Log in</span></a> to get started.
+        </div>
     </div>
 </div>

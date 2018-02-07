@@ -16,7 +16,8 @@ export class TeamInfoComponent implements OnInit {
     description: 'A team of geologists dedicated to studying dinosaurs',
     leader: {
       id: 'asdf',
-      name: 'Donna Sparkles',
+      firstName: 'Elmo',
+      lastName: 'Distance',
       imageUrl: 'asdfadsf',
       title: 'UI Designer',
       description: 'Not related to Pink Sparkles',

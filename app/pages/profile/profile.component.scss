@@ -1,0 +1,110 @@
+@import '../../../vars';
+
+
+input {
+    padding: 10px;
+    font-family: $normal;
+    border: none;
+    border-bottom: solid medium $textlight;
+    background-color: transparent;
+    color: $text;
+    font-size: 110%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    padding: 10px;
+    font-family: $normal;
+    border: none;
+    background-color: transparent;
+    color: $text;
+    font-size: 110%;
+    transition: 0.2s;
+    resize: none;
+    width: 500px;
+
+    &:focus {
+        outline: none;
+        background-color: $mixpss;
+    }
+}
+
+.profile {
+    
+}
+
+.profile-title {
+    padding: 30px;
+
+    @include title;
+
+    font-size: 250%;
+}
+
+.edit {
+
+    @include clickable;
+}
+
+.details {
+    padding: 40px;
+
+    tr {
+        padding: 10px 30px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    th {
+        font-weight: normal;
+    }
+
+    td {
+        
+    }
+
+}
+
+.skill-set {
+    width: 40vw;
+}
+
+.skill {
+    display: inline-block;
+    margin: 5px;
+    background-color: $mixpss;
+
+    div {
+        padding: 3px 7px;
+    }
+}
+
+.scr {
+    height: 85vh;
+}
+
+.micrify {
+    height: 0px;
+    width: 0px;
+    box-sizing: border-box;
+}
+
+.holder {
+    height: 100px;
+}
+
+.changes {
+    padding: 30px;
+    display: table;
+    margin-left: auto;
+}
+
+.limit {
+    width: 100px;
+    height: 50px;
+}

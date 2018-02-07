@@ -1,0 +1,54 @@
+@import '../../../vars';
+
+.image {
+    width: 100%;
+
+    img {
+        width: 200px;
+    }
+
+}
+
+.image-display {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+
+    @include clickable;
+
+    
+    &:hover {
+        opacity: 1;
+
+        .description {
+            opacity: 1;
+            pointer-events: auto;
+        }
+         
+        .desc {
+            opacity: 1;
+        }
+
+    }
+}
+
+.description {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    padding: 20px;
+    text-align: center;
+    color: $texthighlighted;
+    margin-top: -10%;
+}
+
+.desc {
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.4s;
+    color: $texthighlighted;
+    background-color: rgba(0,0,0,0.4);
+
+}

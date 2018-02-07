@@ -1,0 +1,63 @@
+@import '../../../vars';
+
+.projects {
+    background-color: $secondary;
+    width: 400px;
+
+}
+
+.band-nav-project {
+    padding: 0px 10px;
+}
+
+.band-nav-task {
+    padding: 0px 10px;
+    border-left: solid thin $text;
+    color: $textlight;
+    
+}
+
+.nb {
+    border: none;
+}
+
+.task-ident {
+    padding: 10px;
+}
+
+.num {
+    @include title;
+
+    font-size: 180%;
+}
+
+.assign-det {
+    div {
+        padding: 15px 5px 5px 5px;
+    }
+}
+
+.next-task {
+
+    @include clickable;
+
+    &:active {
+        background-color: $mixpss;
+    }
+}
+
+.task-desc {
+    padding: 20px;
+    max-height: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.task-meta {
+    padding: 5px 5px 30px 5px;
+    color: $textlight;
+
+    div {
+        padding: 5px;
+    }
+}

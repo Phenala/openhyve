@@ -76,10 +76,24 @@
     margin-right: 0px;
 }
 
+.narrow {
+    .contacts-box {
+        width: 100px;
+    }
+
+    .contact-instance {
+        margin: 0px;
+    }
+
+    .contact-new-message-count {
+        position: relative;
+        left: -20px;
+        top: 25px;
+    }
+}
 
 
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: $mobscreen) {
 
     .contacts-box {
         width: 100vw;

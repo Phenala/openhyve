@@ -1,34 +1,68 @@
-<div class='projects-list'>
-  <div>
-    <app-search-bar [tags]='"tag-full-width"' ></app-search-bar>
-  </div>
-  <div class='my-projects-set'>
-    <div class='list-title'>
-      My Projects
+<div [ngClass]='{narrow: !ui.sideNavIsOpen}'>
+  <div class='projects-list'>
+    <div>
+      <app-search-bar [searchtype]='"projects"' [tags]='"tag-full-width"'></app-search-bar>
     </div>
-    <div *ngFor='let project of myprojects.concat(myprojects)'>
-      <div class='my-project-instance'>
+    <div class='my-projects-set'>
         <div class='row-set'>
-          <div class='list-picture'>
-            <app-entity-image></app-entity-image>
+          <div class="list-title fill" *ngIf='ui.sideNavIsOpen'>
+            My Projects
           </div>
-          <div class='fill'>
-            <div class='project-name'>
-              {{project.name}}
+          <div>
+            <app-hyve-loader *ngIf='projectService.loadingProjects' [scale]='0.3'></app-hyve-loader>
+          </div>
+        </div>
+      <div *ngFor='let project of projectService.myprojects'>
+        <div class='my-project-instance' [ngClass]='{selected: project.id == projectService.selectedProject}' (click)='projectService.selectProject(project.id)'>
+          <div class='row-set'>
+            <div class='list-picture'>
+              <app-entity-image [scale]='ui.sideNavIsOpen?1:1.6'></app-entity-image>
             </div>
-            <div class='main-row-set'>
-              <div class='set-info fill'>
-                <span class='set-num'>Set {{project.sets[project.currentSet].number}}</span> {{project.sets[project.currentSet].name}} 
+            <div class='fill'  *ngIf='ui.sideNavIsOpen'>
+              <div class='project-name'>
+                {{project.name}}
               </div>
-              <div class='set-percent'>
-                {{project.sets[project.currentSet].setCompletion}}%
+              <div class='main-row-set'>
+                <div class='set-info fill'>
+                  <span class='set-num'>Set 11</span> Interface Design 
+                </div>
+                <div class='set-percent'>
+                  20%
+                </div>
+              </div>
+              <app-progress [percent]='20' ></app-progress>
+              <div class='task-info'>
+                4 Pending Tasks
+              </div>
+              <div>
               </div>
             </div>
-            <app-progress></app-progress>
-            <div class='task-info'>
-              4 Pending Tasks
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div *ngFor='let project of projectService.projects'>
+        <div class='project-instance'>
+          <div class='row-set'>
+            <div class='project-image'>
+              <app-entity-image [scale]='ui.sideNavIsOpen?2:1.6'></app-entity-image>
             </div>
-            <div>
+            <div class='project-det fill'  *ngIf='ui.sideNavIsOpen'>
+              <div class='row-set'>
+                <div class='project-name'>
+                  {{project.name}}
+                </div>
+                <div class='project-field'>
+                  {{project.field}}
+                </div>
+              </div>
+              <div class='project-desc'>
+                {{project.description}}
+              </div>
+              <div class='project-contrib'>
+                {{project.contributors}} contributors
+              </div>
             </div>
           </div>
         </div>

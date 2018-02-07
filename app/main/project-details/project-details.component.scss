@@ -1,0 +1,89 @@
+@import '../../../vars';
+
+
+.project-details {
+    background-image: url('../../../assets/images/svgs/corner-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.project-detail-header {
+    display: table;
+    padding: 40px;
+    margin: auto;
+}
+
+
+.desc {
+    overflow: visible;
+    direction: rtl;
+}
+
+.desc-set {
+
+}
+
+
+.project-header-name {
+    text-align: center;
+    padding: 10px;
+
+    @include title;
+
+    font-size: 300%;
+}
+
+.section-title {
+    padding: 40px 30px 10px 30px;
+
+    @include title;
+    
+    font-size: 250%;
+}
+
+.description {
+    padding: 20px 50px 20px 20px;
+}
+
+
+.project-info-name {
+    font-size: 150%;
+    //text-align: right;
+    padding: 5px;
+}
+
+.project-info-focus {
+    color: $textlight;
+    // text-align: right;
+}
+
+.project-info-founder {
+    text-align: right;
+    color: $textlight;
+}
+
+.project-info-desc {
+    padding: 10px 0px;
+}
+
+.project-info-members {
+    text-align: right;
+    color: $textlight;
+}
+
+.lean {
+    text-align: right;
+}
+
+.image-set {
+    padding: 100px 30px;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}

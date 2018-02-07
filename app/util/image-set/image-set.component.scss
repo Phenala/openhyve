@@ -1,0 +1,29 @@
+@import '../../../vars';
+
+.image-set {
+
+    table {
+        width: 100%;
+    }
+}
+
+.thumb-set {
+    background-color: $mixpps;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 60px;
+    background-size: 100%;
+    background-position: center;
+    border: solid thin transparent;
+    transition: 0.2s;
+
+    @include clickable;
+}
+
+
+
+.selected {
+    border: solid thin $converse;
+}

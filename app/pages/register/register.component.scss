@@ -30,6 +30,7 @@
 
     input {
         width: 100%;
+        min-width: 250px;
         padding: 10px;
         background-color: transparent;
         transition: 0.3s;
@@ -39,6 +40,7 @@
         font-family: $normal;
         border-bottom: solid medium $secondary;
         box-sizing: border-box;
+        vertical-align: middle;
         margin-bottom: 20px;
     }
 
@@ -58,8 +60,53 @@
     width: 800px;
 }
 
-.status {
-    width: 0px;
+.midder {
+    padding: 10px;
+    display: inline-block;
+}
+
+.status-in {
+    width: 250px;
     overflow: hidden;
-    padding: 3px 10px;
+    vertical-align: middle;
+    padding: 0px 10px;
+}
+
+.result {
+    text-align: center;
+
+    @include title;
+    
+    font-size: 280%;
+}
+
+.result-detail {
+    text-align: center;
+}
+
+.loader {
+    margin-top: -10px;
+    display: inline-block;
+}
+
+.logosigns {
+    padding: 30px;
+}
+
+.status {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.valid_field input {
+    background-color: rgba(0,255,0,0.1) !important;
+}
+
+.invalid_field input {
+    background-color: rgba(255,0,0,0.1) !important;
 }

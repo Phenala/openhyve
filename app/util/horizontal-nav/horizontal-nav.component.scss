@@ -3,6 +3,7 @@
 
 .nav-set-enc {
     overflow-wrap: none;
+    width: 0px;
     transition: 0.3s;
 
     > div {
@@ -34,7 +35,7 @@
 
 .overfl {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .overfl2 {
@@ -44,7 +45,7 @@
 
 .main_nav {
     opacity: 1 !important;
-    border-bottom: solid medium $converse !important;
+    border-bottom: solid medium $accent !important;
 }
 
 .nav-instance {

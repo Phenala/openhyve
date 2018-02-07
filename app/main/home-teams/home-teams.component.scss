@@ -1,0 +1,34 @@
+@import '../../../vars';
+
+.teams {
+    background-color: $secondary;
+    width: 400px;
+}
+
+.bx {
+    box-sizing: border-box;
+}
+
+.team-name {
+    padding: 10px;
+}
+
+.announcement-content {
+    padding: 20px;
+}
+
+.default-input textarea {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.scroll-button {
+    transition: 0.2s;
+
+    @include clickable;
+
+    &:active {
+        background-color: $mixpps;
+    }
+}

@@ -1,0 +1,180 @@
+@import '../../../vars';
+
+
+.task-tag {
+    height: 30px;
+}
+
+.tasks-enc {
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.tasks {
+    padding: 40px 0px;
+    display: table;
+    margin: auto;
+}
+
+.task-target {
+    padding: 20px;
+}
+
+.task-instance {
+    padding: 20px;
+    width: 600px;
+}
+
+.task-header-assignment {
+    width: max-content;
+}
+
+.tag-shape {
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.tag-stencil {
+    background-color: $secondary;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg) scale(1.5);
+    display: table;
+}
+
+.tag-main {
+    background-color: $secondary;
+    height: 30px;
+    width: max-content;
+    margin-left: -1px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.tag-main-inner {
+    padding: 2px 5px;
+}
+
+.task-inner {
+    background-color: $mixpss;
+}
+
+.task-title-ident {
+    font-size: 120%;
+    padding: 10px 30px;
+    width: max-content;
+}
+
+.task-title-num {
+    font-size: 120%;
+}
+
+.task-title {
+    font-size: 120%;
+    color: $texthighlighted;
+}
+
+.entity-name {
+    padding: 10px;
+}
+
+.task-users {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: $secondary;
+    
+    th {
+        text-align: center;
+        padding: 5px;
+        font-weight: normal;
+        color: $textlight;
+        font-size: 120%;
+    }
+
+    td {
+        text-align: center;
+    }
+}
+
+.task-dates {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    th, td {
+        width: 18%;
+        text-align: center;
+        box-sizing: border-box;
+        vertical-align: baseline;
+
+    }
+    
+    th {
+        padding: 5px;
+        font-weight: normal;
+        color: $textlight;
+        font-size: 85%;
+    }
+
+    td {
+        text-align: center;
+        font-family: $title;
+        font-size: 240%;
+    }
+}
+
+.instruct {
+    padding: 20px 30px 50px 30px;
+}
+
+.pictures {
+    padding: 0px 0px 50px 0px;
+}
+
+.source-links {
+    li {
+       color: $textlink;
+       list-style: none;
+
+       &:hover {
+           text-decoration: underline;
+       } 
+    }
+}
+
+.part-title {
+    font-size: 120%;
+    padding: 10px;
+
+    @include title;
+}
+
+.pitches {
+    padding: 20px 0px;
+}
+
+.pitches-box {
+    background-color: $secondary;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.pitcher {
+    padding: 5px 10px;
+    font-size: 110%;
+    color: $textlink;
+}
+
+.pitch {
+    padding: 10px 10px 10px 60px;
+}
+
+.space {
+    margin: 0px 10px;
+}

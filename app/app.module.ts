@@ -1,3 +1,10 @@
+
+  // tslint:disable:max-line-length
+
+
+import { DataService } from './services/data.service';
+import { HttpAuthService } from './services/http-auth.service';
+import { ProjectService } from './services/project.service';
 import { LoginService } from './services/login.service';
 import { TeamService } from './services/team.service';
 import { UiService } from './services/ui.service';
@@ -55,6 +62,28 @@ import { ProjectTasksComponent } from './main/project-tasks/project-tasks.compon
 import { CifDirective } from './temp/cif.directive';
 import { RegisterComponent } from './pages/register/register.component';
 import { IconComponent } from './util/icon/icon.component';
+import { GaugeComponent } from './util/gauge/gauge.component';
+import { TaskComponent } from './main/task/task.component';
+import { ImageSetComponent } from './util/image-set/image-set.component';
+import { ImageComponent } from './util/image/image.component';
+import { ProjectDetailsComponent } from './main/project-details/project-details.component';
+import { ProjectSetBarComponent } from './main/project-set-bar/project-set-bar.component';
+import { ProjectStageDetailComponent } from './main/project-stage-detail/project-stage-detail.component';
+import { BandNavComponent } from './util/band-nav/band-nav.component';
+import { ProfileSettingsComponent } from './main/profile-settings/profile-settings.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ImageViewerComponent } from './main/image-viewer/image-viewer.component';
+import { UploadImageComponent } from './util/upload-image/upload-image.component';
+import { MobileNavComponent } from './main/mobile-nav/mobile-nav.component';
+import { HomeNotificationsComponent } from './main/home-notifications/home-notifications.component';
+import { HomeTeamsComponent } from './main/home-teams/home-teams.component';
+import { HomeProjectsComponent } from './main/home-projects/home-projects.component';
+import { HomeMessagesComponent } from './main/home-messages/home-messages.component';
+import { HomeManageTeamsComponent } from './main/home-manage-teams/home-manage-teams.component';
+import { HomeManageProjectComponent } from './main/home-manage-project/home-manage-project.component';
+import { NewTeamModalComponent } from './main/new-team-modal/new-team-modal.component';
+import { NewProjectModalComponent } from './main/new-project-modal/new-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +129,29 @@ import { IconComponent } from './util/icon/icon.component';
     ProjectTasksComponent,
     CifDirective,
     RegisterComponent,
-    IconComponent
+    IconComponent,
+    GaugeComponent,
+    TaskComponent,
+    ImageSetComponent,
+    ImageComponent,
+    ProjectDetailsComponent,
+    ProjectSetBarComponent,
+    ProjectStageDetailComponent,
+    BandNavComponent,
+    ProfileSettingsComponent,
+    HomeComponent,
+    ProfileComponent,
+    ImageViewerComponent,
+    UploadImageComponent,
+    MobileNavComponent,
+    HomeNotificationsComponent,
+    HomeTeamsComponent,
+    HomeProjectsComponent,
+    HomeMessagesComponent,
+    HomeManageTeamsComponent,
+    HomeManageProjectComponent,
+    NewTeamModalComponent,
+    NewProjectModalComponent
   ],
   imports: [
     BrowserModule,
@@ -111,7 +162,7 @@ import { IconComponent } from './util/icon/icon.component';
     ),
     AppRoutingModule
   ],
-  providers: [ContactService, ChatService, SearchService, UiService, TeamService, LoginService],
+  providers: [ContactService, ChatService, SearchService, UiService, TeamService, LoginService, ProjectService, HttpAuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

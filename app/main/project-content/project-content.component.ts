@@ -1,3 +1,5 @@
+import { ProjectService } from './../../services/project.service';
+import { TabStyle } from './../../pagestates';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,25 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectContentComponent implements OnInit {
 
-  tabs = ['Tasks', 'Details'];
+  tabs = ['Tasks', 'Contributors', 'Details'];
 
+  activeTab = 0;
+  tabStyle: TabStyle;
 
-  tabStyle = {
-    'width': this.tabs.length + '02%',
-    'margin-left': '0%'
-  };
-
-  tabdivStyle = {
-    'width': (100 / this.tabs.length - 0.3) + '%'
-  };
-
-  constructor() { }
+  constructor(public projectService: ProjectService) { }
 
   ngOnInit() {
   }
 
-  changeTab(tab: number) {
-    this.tabStyle['margin-left'] = '-' + tab + '00%';
+  changeTab(tabdata) {
+    this.tabStyle = tabdata.style;
+    this.activeTab = tabdata.tab;
   }
-
 }

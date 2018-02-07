@@ -2,10 +2,8 @@
 
 .projects-content {
     background-color: $primary;
-    height: 90vh;
+    height: 95vh;
 }
-
-
 
 .tabset-enclosure {
     overflow: hidden;
@@ -20,6 +18,19 @@
     width: 33.1%;
     box-sizing: border-box;
     height: 88vh;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
+}
+
+.scroll {
+    overflow-y: auto !important;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
 }

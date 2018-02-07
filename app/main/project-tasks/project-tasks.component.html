@@ -1,11 +1,80 @@
 <div class='sets'>
-  <div class='set-header'>
-    Sets
-  </div>
-  <div class='set-viewer'>
-    <app-horizontal-nav></app-horizontal-nav>
-  </div>
   <div>
-    <app-hyve-loader></app-hyve-loader>
+    <div>
+      <div class='row-set'>
+        <div class='set-header-image'>
+          <app-entity-image></app-entity-image>
+        </div>
+        <div class='fill'>
+          <div class='set-header'> 
+            <app-band-nav></app-band-nav>
+          </div>
+        </div>
+        <div>
+          <div class='space'>
+            Filters
+          </div>
+        </div>
+        <div>
+          <div class='icon-filter space' [ngClass]='{filter_on: filters.mytasksonly}' title='Show My Tasks Only' (click)='toggleFilter("mytasksonly")'>
+            <app-entity-image [scale]='0.5' ></app-entity-image>
+          </div>
+        </div>
+        <div *ngFor='let filter of filterIcons'>
+          <div class='icon-filter' [ngClass]='{filter_on: filters[filter.reference]}' [title]='filter.title' (click)='toggleFilter(filter.reference)'>
+            <app-icon [scale]='0.5' [src]='filter.icon' ></app-icon>
+          </div>
+        </div>
+        <div>
+          <div class='icon-filter' [ngClass]='{filter_on: filterAll}' (click)='toggleAll()'>
+            All
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='set-viewer'>
+      <app-horizontal-nav [navValues]='navValues' [updateVals]='updater' (selectNav)='setSelected($event)' ></app-horizontal-nav>
+    </div>
+    <div *ngIf='!projectService.loadingTasks'>
+      <div class='main-row-set'>
+        <div>
+          <div class='task-navigator'>
+            <div class='task-nav-set'>
+              <div class='task-navigator-header'>
+                {{filteredTasks.length}} <span class="header-mini"> {{filteredTasks.length == 1 ? "task" : "tasks" }}</span>
+              </div>
+              <div>
+                <div *ngFor='let task of filteredTasks, let num = index'>
+                  <div class='task-nav-instance' (click)='focusTask(num)' [ngClass]='{focused_task: scrollfocus == num}' [title]='"Task " + task.number + ": " + task.title'>
+                    <div class='row-set'>
+                      <div>
+                        <app-icon [scale]='0.5' [src]='filterIcons[task.status].icon'></app-icon>
+                      </div>
+                      <div class='task-num'>
+                        {{task.number}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='fill'>
+          <div class='tasks-enc' id='enclosure' (scroll)='encScroll()' >
+            <div class='tasks'>
+              <div *ngFor='let task of filteredTasks, let num = index'>
+                <div [id]='"task" + num'>
+                  <app-task [task]='task'></app-task>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf='projectService.loadingTasks' class='loader'>
+      <app-hyve-loader [scale]='2' ></app-hyve-loader>
+    </div>
   </div>
 </div>

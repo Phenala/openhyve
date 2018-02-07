@@ -1,16 +1,25 @@
 <div class='projects-content'>
-  <div>
+  <div  *ngIf='projectService.selectedProject != null'>
     <div>
       <app-tabs [tabNames]='tabs' (tabChange)='changeTab($event)'></app-tabs>
     </div>
     <div class='tabset-enclosure'>
-      <div class='tabset' [ngStyle]='tabStyle'>
+      <div class='tabset' [ngStyle]='tabStyle.outTabStyle'>
         <div class='main-block-row-set tab'>
-          <div [ngStyle]='tabdivStyle'>
-            <app-project-tasks></app-project-tasks>
+          <div [ngStyle]='tabStyle.outTabdivStyle'>
+            <div class='max-width-set'>
+              <app-project-tasks></app-project-tasks>
+            </div>
           </div>
-          <div [ngStyle]='tabdivStyle'>
-            <app-team-projects></app-team-projects>
+          <div [ngStyle]='tabStyle.outTabdivStyle'>
+            <div class='max-width-set'>
+              <app-members></app-members>
+            </div>
+          </div>
+          <div [ngStyle]='tabStyle.outTabdivStyle' class='scroll'>
+            <div class='max-width-set'>
+              <app-project-details></app-project-details>
+            </div>
           </div>
         </div>
       </div>

@@ -68,3 +68,33 @@
     font-size: 110%;
     color: $textlink;
 }
+
+.narrow {
+
+    .teams-box {
+        width: 100px;
+    }
+
+    .team-instance {
+        background-color: transparent;
+        margin: 0px;
+    }
+
+    .team_selected {
+        background-color: $primary;
+    }
+
+    .team-image {
+        display: table;
+        margin: auto;
+    }
+
+    .team-instance:hover {
+        box-shadow: none;
+    }
+    
+    .my-teams {
+        padding-bottom: 0px;
+    }
+
+}

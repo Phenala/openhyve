@@ -1,9 +1,9 @@
-<div class='teams'>
+<div class='teams' [ngClass]='{narrow: !ui.sideNavIsOpen}'>
   <div class='teams-box'>
     <app-search-bar [tags]='"tag-full-width"' [searchtype]='"teams"'></app-search-bar>
     <div class="my-teams" *ngIf='teamService.myteams.length > 0'>
       <div class='row-set'>
-        <div class="my-teams-title fill">
+        <div class="my-teams-title fill" *ngIf='ui.sideNavIsOpen'>
           My teams
         </div>
         <div>
@@ -12,10 +12,10 @@
       </div>
       <div class='team-instance' *ngFor='let team of teamService.myteams, let num = index' (click)='selectTeam(team.id)' [ngClass]='{team_selected: teamService.selectedTeam == team.id}'>
         <div class='row-set'>
-          <div>
-            <app-entity-image></app-entity-image>
+          <div class='team-image'>
+            <app-entity-image [scale]='ui.sideNavIsOpen?1:1.6' ></app-entity-image>
           </div>
-          <div class="team-content">
+          <div class="team-content" *ngIf='ui.sideNavIsOpen'>
             <div class="team-name">
               {{team.name}}
             </div>
@@ -29,14 +29,14 @@
     <app-button [lean]='"right"' [icon]='"close-icon"' *ngIf='teamService.teams.length > 0' (click)='clearTeams()'></app-button>
     <div class="other-teams">
       <div class='team-instance' *ngFor='let team of teamService.teams'  (click)='selectTeam(team.id)' [ngClass]='{team_selected: teamService.selectedTeam == team.id}'>
-        <div class="team-info-2">
+        <div class="team-info-2"  *ngIf='ui.sideNavIsOpen'>
           David Dundee is a member of this team.
         </div>
         <div class='row-set fill'>
-          <div>
+          <div class='team-image'>
             <app-entity-image [scale]='1.7' ></app-entity-image>
           </div>
-          <div class="team-content">
+          <div class="team-content"  *ngIf='ui.sideNavIsOpen'>
             <div class="team-name">
               {{team.name}}
             </div>

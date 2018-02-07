@@ -1,4 +1,7 @@
 <div class='members'>
+  <div class='member-title'>
+    {{users.length}} contributors
+  </div>
   <div *ngFor='let user of users' class='member-instance' [ngClass]='{admin: user.meta.status == "Admin"}'>
     <div class='row-set'> 
       <div class='image'>

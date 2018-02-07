@@ -20,6 +20,14 @@ export class IconComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.opdate();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.opdate();
+  }
+
+  opdate () {
     this.imgsrc = '../../../assets/images/svgs/' + this.src + '.svg';
     switch (this.lean) {
       case 'right':

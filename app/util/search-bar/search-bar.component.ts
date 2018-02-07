@@ -1,3 +1,5 @@
+import { UiService } from './../../services/ui.service';
+import { ProjectService } from './../../services/project.service';
 import { TeamService } from './../../services/team.service';
 import { ContactService } from './../../services/contact.service';
 import { ChatService } from './../../services/chat.service';
@@ -15,13 +17,36 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Input() tags: String;
+  @Input() tags: string;
   @Input() searchtype: string;
+
+  searchResults = [
+    {
+      type: 'team',
+      link: 'adsfasdsfd',
+      name: 'Clarity',
+      image: 'Rocss'
+    },
+    {
+      type: 'project',
+      link: 'adsfasdsfd',
+      name: 'Zeta Project',
+      image: 'Rocss'
+    },
+    {
+      type: 'user',
+      link: 'adsfasdsfd',
+      name: 'Donna Sparkles',
+      image: 'Rocss'
+    }
+  ];
+
+  suggest = false;
 
   inputValue: string;
 
   constructor(private searchService: SearchService, private chatService: ChatService, private contactService: ContactService,
-              private teamService: TeamService) {}
+              private teamService: TeamService, private projectService: ProjectService, public ui: UiService) {}
 
   ngOnInit(): void {
 
@@ -35,9 +60,16 @@ export class SearchBarComponent implements OnInit {
       case 'teams':
         this.teamService.searchTeams(this.inputValue);
         break;
+      case 'projects':
+        this.projectService.searchProjects(this.inputValue);
+        break;
       case 'general':
         this.searchGeneral();
     }
+  }
+
+  closeResults() {
+    this.suggest = false;
   }
 
   searchContact() {
@@ -55,6 +87,26 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
-  searchGeneral() {}
+  searchGeneral() {
+    this.showSuggest();
+  }
+
+  showSuggest() {
+    this.suggest = true;
+  }
+
+  toggleSideNav() {
+    this.ui.toggleSideNav();
+  }
+
+  openSideNav() {
+    if (this.tags === 'tag-full-width') {
+      this.ui.openSideNav();
+    }
+  }
+
+  checkVis() {
+    return this.tags !== 'tag-full-width' || this.ui.sideNavIsOpen;
+  }
 
 }

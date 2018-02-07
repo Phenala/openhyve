@@ -3,11 +3,11 @@
     <div class='row-set'>
       <div class='scroll scroll-left' (click)='scroll(-1);'>
       </div>
-      <div class='fill' id='viewer'   (click)='adjustWidth()'>
+      <div class='fill' id='viewer'>
         <div class='overfl'>
           <div class='overfl2'>
-            <div class='block-row-set nav-set-enc' [ngStyle]='navenc'>
-              <div *ngFor='let nav of navValues, let num = index' class='nav-instance' [ngClass]='{main_nav: num == navIndex}' (click)='setScroll(num)'>
+            <div *ngIf='!loadingNav' class='block-row-set nav-set-enc' [ngStyle]='navenc'>
+              <div *ngFor='let nav of navValues, let num = index' class='nav-instance' [ngClass]='{main_nav: num == navIndex}' (click)='clicked(num)'>
                 <div class='row-set'>
                   <div class='nav-desc'>
                     {{nav.descriptor}}

@@ -10,7 +10,8 @@ export class EntityUserComponent implements OnInit {
 
   @Input() user: User = {
     id: 'asdf',
-    name: 'Donna Sparkles',
+    firstName: 'Dough',
+    lastName: 'Boy',
     imageUrl: 'asdfadsf',
     title: 'UI Designer',
     description: 'Not related to Pink Sparkles',

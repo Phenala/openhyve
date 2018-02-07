@@ -1,0 +1,32 @@
+@import '../../../vars';
+
+
+.messages {
+    background-color: $secondary;
+    width: 400px;
+}
+
+.default-input {
+   textarea {
+       width: 100%;
+       box-sizing: border-box;
+   }
+}
+
+.message-instance {
+    padding: 10px;
+}
+
+.scroll-button {
+    transition: 0.2s;
+
+    @include clickable;
+
+    &:active {
+        background-color: $mixpps;
+    }
+}
+
+.message-content {
+    padding: 10px;
+}

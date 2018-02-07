@@ -1,0 +1,14 @@
+@import '../../../vars';
+
+.gauge {
+    width: 100%;
+    background-color: $mixpps;
+    height: 2px;
+}
+
+.gaugelevel {
+    display: inline-block;
+    height: 2px;
+    margin: 0 1%;
+    width: 20%;
+}

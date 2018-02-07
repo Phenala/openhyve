@@ -8,7 +8,7 @@ a {
 body {
 	margin: 0px;
 	font-size: 11pt;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .main-row-set {
@@ -25,6 +25,10 @@ body {
 
 .fill {
 	width: 100%;
+}
+
+.suffice {
+	width: max-content;
 }
 
 .body {
@@ -54,6 +58,16 @@ body {
 .block-row-set > div {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.low-block-row-set > div {
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.max-width-set {
+    max-width: 1000px;
+    margin: auto;
 }
 
 @media screen and (max-width: 700px) {

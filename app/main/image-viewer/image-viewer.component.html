@@ -1,0 +1,12 @@
+<div [ngClass]='{visible: ui.isShowingImage}'>
+  <div class='viewer'>
+    <div class='close-button'>
+      <app-button [lean]='"right"' [type]='3' [icon]='"close-icon"' (click)='close()' ></app-button>
+    </div>
+    <div class='image'>
+      <div>
+        <img [src]='source'>
+      </div>
+    </div>
+  </div>
+</div>

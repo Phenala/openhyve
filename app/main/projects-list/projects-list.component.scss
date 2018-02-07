@@ -4,6 +4,7 @@
     background-color: $secondary;
     width: 500px;
     height: 95vh;
+    transition: 0.3s;
 }
 
 .my-projects-set {
@@ -12,18 +13,17 @@
 }
 
 .list-title {
-    color: $primary;
-    padding: 10px 20px;
-
-    @include title;
-
+    font-family: $title;
     font-size: 200%;
+    padding: 15px 30px;
+    color: $textdark;
+    text-transform: uppercase;
 }
 
 .my-project-instance {
     background-color: $mixpss;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     transition: 0.3s;
 
     &:hover {
@@ -31,11 +31,15 @@
     }
 
     &:active {
-        transform: scale(0.95);
         background-color: $mixpss;
     }
 
     @include clickable;
+}
+
+.selected {
+    background-color: $primary;
+    margin-right: 0px;
 }
 
 .project-name {
@@ -64,4 +68,46 @@
 
 .list-picture {
     padding: 10px;
+}
+
+.project-instance {
+    padding: 10px;
+    background-color: $mixpss;
+    margin: 5px;
+}
+
+.project-contrib {
+    text-align: right;
+}
+
+.project-field {
+    color: $textlight;
+    padding: 0px 20px;
+}
+
+.project-det {
+    padding: 20px;
+}
+
+.narrow {
+
+    .projects-list {
+        width: 100px;
+    }
+
+    .my-project-instance, .project-instance {
+        margin: 0px;
+
+    }
+
+    .my-projects-set {
+        padding-bottom: 0px;
+    }
+
+    .list-picture {
+        display: table;
+        margin: auto;
+        padding: 5px 0px;
+    }
+
 }

@@ -18,7 +18,7 @@ export class NavigatorComponent implements OnInit {
   currentPage = {
       'title': 'Chat',
       'description': 'Communicate and keep in touch with others for better and more efficient teamwork',
-      'routerlink': '/user/chat',
+      'routerlink': '/chat',
       'iconlink': '../../../assets/images/chat-icon.png'
     };
 
@@ -26,7 +26,7 @@ export class NavigatorComponent implements OnInit {
     {
       'title': 'Home',
       'description': 'Where all can be seen',
-      'routerlink': '/user/home',
+      'routerlink': '/home',
       'iconlink': '../../../assets/images/svgs/home-icon.svg'
     },
     {
@@ -48,21 +48,9 @@ export class NavigatorComponent implements OnInit {
       'iconlink': '../../../assets/images/svgs/projects-icon.svg'
     },
     {
-      'title': 'Boards',
-      'description': 'Get together and brainstorm your ideas in a creative environment',
-      'routerlink': '/user/boards',
-      'iconlink': '../../../assets/images/svgs/boards-icon.svg'
-    },
-    {
-      'title': 'Repo',
-      'description': 'Never lose track of your data with our repository service',
-      'routerlink': '/user/repo',
-      'iconlink': '../../../assets/images/svgs/repo-icon.svg'
-    },
-    {
       'title': 'Profile',
       'description': 'Let people find you with the information you provide',
-      'routerlink': '/user/profile',
+      'routerlink': '/profile',
       'iconlink': '../../../assets/images/svgs/profile-icon.svg'
     }
   ];

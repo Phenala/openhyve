@@ -1,0 +1,7 @@
+<div class='image-set'>
+  <app-image [image]='imageSet[currentImage]' ></app-image>
+  <div class='block-row-set thumb-set'>
+    <div *ngFor='let image of imageSet, let num = index' class="thumbnail" [ngClass]='{selected: currentImage == num}' [ngStyle]='styles[num]' (click)='setImage(num)'>
+    </div>
+  </div>
+</div>

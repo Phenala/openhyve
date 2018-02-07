@@ -1,0 +1,153 @@
+<div class='task'>
+  <div class='task-instance'>
+    <div class='main-row-set task-tag'>
+      <div class='fill'>
+      </div>
+      <div>
+        <div class='tag-shape'>
+          <div class='tag-stencil'>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class='tag-main row-set'>
+          <div>
+            <app-icon [scale]='0.5' [src]='statusData[task.status].icon'></app-icon>
+          </div>
+          <div class='tag-main-inner'>
+            {{statusData[task.status].name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='task-inner'>
+      <div class='row-set'>
+        <div>
+          <div class='task-title-ident'>
+            Task <span class="task-title-num">{{task.number}}</span>
+          </div>
+        </div>
+        <div class='task-title fill'>
+          {{task.title}}
+        </div>
+        <!--<div>
+          <div class='task-header-assignment'>
+            Assigned To
+          </div>
+        </div>-->
+        <div class='task-target'>
+          <app-entity-image></app-entity-image>
+        </div>
+      </div>
+      <div class='task-assigns task-users'>
+        <table class="fill">
+          <tr>
+            <th>Assigner</th>
+            <th>Assignee</th>
+            <th>Proxy Team</th>
+          </tr>
+          <tr>
+            <td>
+              <div class='center'>
+                <app-entity-image [scale]='1.4' ></app-entity-image>
+              </div>
+              <div class='entity-name'>
+                <app-entity-user [user]='task.assigner' ></app-entity-user>
+              </div>
+            </td>
+            <td>
+              <div class='center'>
+                <app-entity-image [scale]='1.4' ></app-entity-image>
+              </div>
+              <div class='entity-name'>
+                <app-entity-user [user]='task.assignee' ></app-entity-user>
+              </div>
+            </td>
+            <td>
+              <div class='center'>
+                <app-entity-image [scale]='1.4' ></app-entity-image>
+              </div>
+              <div class='entity-name'>
+                {{task.assigneeTeam.name}}
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div class='task-assigns task-dates'>
+          <table>
+            <tr>
+              <th>Assigned</th>
+              <td>7/5/11</td>
+              <th>In progress</th>
+              <td>2d 5h</td>
+              <th>Due </th>
+              <td>2/2/11</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <app-progress [percent]='78' ></app-progress>
+        </div>
+      </div>
+      <div>
+        <div class='part-title'>
+          Instructions
+        </div>
+        <div class='instruct'>
+          {{task.description}}
+        </div>
+        <div class='pictures'>
+          <app-image-set [imageSet]='images' ></app-image-set>
+        </div>
+      </div>
+      <div>
+        <div class='part-title'>
+          Look Ats
+        </div>
+        <ul class="source-links">
+          <a href='http://lokson.rog.eu/left/reduction' target="_blank">
+            <li>http://lokson.rog.eu/left/reduction</li>
+          </a>
+        </ul>
+      </div>
+      <div class='pitches' *ngIf='task.pitches.length > 0'>
+        <div class='pitches-title'>
+          Pitches
+        </div>
+        <div *ngFor='let pitch of task.pitches' class='pitches-box'>
+          <div>
+            <div class='row-set'>
+              <div>
+                <app-entity-image [scale]='0.7' ></app-entity-image>
+              </div>
+              <div class='pitcher'>
+                <app-entity-user [user]='pitch.user' ></app-entity-user>
+              </div>
+            </div>
+          </div>
+          <div class='pitch'>
+            {{pitch.pitch}}
+          </div>
+        </div>
+      </div>
+      <div class='row-set'>
+        <div class='fill'>
+        </div>
+        <div>
+          <app-button *ngIf='task.status != 2' [label]='"Pitch"' ></app-button>
+        </div>
+        <div>
+          <app-button *ngIf='task.status == 0' [label]='"Request Transfer"' ></app-button>
+        </div>
+        <div>
+          <app-button *ngIf='task.status == 0' [type]='1' [label]='"Begin"' ></app-button>
+        </div>
+        <div>
+          <app-button *ngIf='task.status == 1' [type]='1' [label]='"Complete"' ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

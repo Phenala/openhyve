@@ -1,0 +1,51 @@
+<div class='project-stage-detail'>
+  <div>
+  </div>
+  <div>
+    <app-horizontal-nav [updateVals]='updater' [navValues]='navValues' (selectNav)='selectStage($event)' ></app-horizontal-nav>
+  </div>
+  <div *ngIf='selectedStage'>
+    <div class='stage-detail'>
+      <app-icon [lean]='"center"' [scale]='3' [src]='"template/design-icon"' ></app-icon>
+      <div class='low-block-row-set stage-title-block'>
+        <div class='stage-num half-fill right'>
+          Stage <span class="num">{{selectedStage.stageNo}}</span>
+        </div>
+        <div class='stage-title half-fill'>
+            {{selectedStage.stage}}
+        </div>
+      </div>
+      <div class='stage-num-dets'>
+        <div class='row-set center stage-dets'>
+          <div class='stage-'>
+            <span class='num'>4</span> Sets 
+          </div>
+          <div>
+            <span class='num'>75</span> Tasks
+          </div>
+        </div>
+      </div>
+      <div class='center'>
+        <div>Task BurnDown</div>
+        <app-line-graph></app-line-graph>
+      </div>
+      <div class='low-row-set stage-date-block'>
+        <div class='fill'>
+          Begun <span class="num">4/2/15</span>
+        </div>
+        <div>
+          <div class='suffice'>
+            Deadline <span class="num">7/5/15</span>
+          </div>
+        </div>
+      </div>
+      <app-progress [percent]='22' ></app-progress>
+      <div class='status'>
+        <div class='num center'>22%</div>
+        <div class='num center'>In Progress</div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

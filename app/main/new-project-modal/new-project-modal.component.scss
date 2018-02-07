@@ -1,0 +1,57 @@
+@import '../../../vars';
+
+.new-project {
+    width: 100vw;
+    max-width: 800px;
+    height: 700px;
+    background-color: $primary;
+    border-bottom: solid medium $accent;
+}
+
+.general-inputs {
+    padding: 30px;
+}
+
+
+.tabset-enclosure {
+    overflow: hidden;
+}
+
+.tabset {
+    width: 300%;
+    transition: 0.6s;
+}
+
+.tab > div {
+    width: 33.1%;
+    box-sizing: border-box;
+    height: 88vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+table {
+    padding: 10px;
+}
+
+th {
+    padding: 15px 20px;
+    font-weight: normal;
+}
+
+th,td {
+    margin: 10px 0px;
+}
+
+textarea {
+    width: 300px;
+}
+
+.micrify {
+    width: 10px;
+    height: 20px;
+}
+
+.space-down {
+    padding: 50px; 
+}

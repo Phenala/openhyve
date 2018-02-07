@@ -1,3 +1,4 @@
+import { UiService } from './../../services/ui.service';
 import { PageState } from './../../pagestates';
 import { ChatService } from './../../services/chat.service';
 import { ContactService } from './../../services/contact.service';
@@ -42,7 +43,7 @@ export class ContactsComponent implements OnInit {
 
   activeContact: string;
 
-  constructor(public contactService: ContactService, public chatService: ChatService) { }
+  constructor(public contactService: ContactService, public chatService: ChatService, public ui: UiService) { }
 
   ngOnInit() {
     this.getContacts();

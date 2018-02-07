@@ -1,7 +1,8 @@
 /*colors*/
 
 $primary: #000;
-$secondary: #444;
+$secondary: #333;
+$accent: #a70;
 $converse: #fff;
 $text: #bbb;
 $textlight: #999;
@@ -66,4 +67,122 @@ $mobscreen: 700px;
 
 @mixin shade {
 	
+}
+
+.link {
+	color: $textlink;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+
+	@include clickable;
+}
+
+.center {
+	display: table;
+	margin: auto;
+}
+
+.lean-right {
+	display: table;
+	margin-left: auto;
+}
+
+.scr {
+	overflow-y: auto;
+
+}
+
+.scr-enc {
+	::-webkit-scrollbar {
+		background-color: transparent;
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: $secondary;
+	}
+}
+
+.box-title {
+	padding: 10px;
+
+	@include title;
+
+	font-size: 220%;
+}
+
+.default-input {
+	input {
+		padding: 10px;
+		font-family: $normal;
+		border: none;
+		border-bottom: solid medium $accent;
+		background-color: transparent;
+		color: $text;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	textarea {
+		padding: 10px;
+		font-family: $normal;
+		border: none;
+		background-color: transparent;
+		border-left: solid medium $accent;
+		color: $text;
+		transition: 0.2s;
+		resize: none;
+
+		&:focus {
+			outline: none;
+			background-color: $mixpss;
+		}
+	}	
+
+	
+	::-webkit-scrollbar {
+		background-color: transparent;
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: $accent;
+	}
+}
+
+.modal-bg {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.modal_visible {
+
+	.modal-bg {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+}
+
+.modal-set {
+	position: fixed;
+	width: 0px;
+	height: 0px;
+	top: 50vh;
+	left: 50vw;
+}
+
+.modal-box {
+	transform: translateX(-50%) translateY(-50%);
+	width: max-content;
 }

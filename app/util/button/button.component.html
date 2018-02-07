@@ -1,4 +1,4 @@
-<div class='button'  [ngStyle]='style'>
+<div class='button'  [ngStyle]='style' [ngClass]='classes[type]'>
   <div class='row-set'>
     <div *ngIf='icon != ""' class='button-image'>
       <img [src]='imagesource' [ngStyle]='imgstyle'>

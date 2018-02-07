@@ -1,0 +1,30 @@
+@import '../../../vars';
+
+.band-bg {
+    background-color: $mixpss;
+    height: 40px;
+    width: 150px;
+    transform: skewX(20deg);
+    border-left: solid thick $accent;
+
+
+    @include clickable;
+}
+
+.band-bg-set {
+    height: 0px;
+}
+
+.band-val {
+    padding: 5px 0px;
+    transform: scale(1);
+    transition: 0.2s;
+
+    @include clickable;
+}
+
+.band-enc {
+    &:hover .band-val {
+        color: $texthighlighted;
+    }
+}

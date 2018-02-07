@@ -1,0 +1,42 @@
+<div class='project-details'>
+  <div class='desc-set'>
+    <div class='desc'>
+      <app-entity-descriptor [type]='"project"' ></app-entity-descriptor>
+    </div>
+  </div>
+  <div class='project-detail-header'>
+    <app-entity-image [scale]='5' ></app-entity-image>
+    <div class='project-header-name'>
+      {{projectService.selectedMyProject.name}}
+    </div>
+  </div>
+  <div class='section-title lean'>
+    General
+  </div>
+  <div>
+    <div class='description'>
+      <div class='image-set'>
+        <app-image-set [imageSet]='images' ></app-image-set>
+      </div>
+      <div class='project-info-name'>
+        {{projectService.selectedMyProject.name}}
+      </div>
+      <div class='project-info-focus'>
+        {{projectService.selectedMyProject.field}}
+      </div>
+      <div class='project-info-desc'>
+        {{projectService.selectedMyProject.description}}
+      </div>
+      <div class='project-info-founder'>
+        Founded by <app-entity-user [user]='projectService.selectedMyProject.leader' ></app-entity-user>
+      </div>
+      <div class='project-info-members'>
+        {{projectService.selectedMyProject.contributors}} contributors
+      </div>
+    </div>
+  </div>
+  <div class='section-title lean'>
+    Stages
+  </div>
+  <app-project-stage-detail></app-project-stage-detail>
+</div>

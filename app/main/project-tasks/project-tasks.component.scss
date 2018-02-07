@@ -2,9 +2,113 @@
 
 
 
+.set-header-image {
+    padding: 0px 10px 0px 10px;
+}
+
 .set-header {
-    padding: 30px 30px 10px 30px;
+    padding: 15px 30px 15px 0px;
     font-size: 250%;
 
     @include title;
+}
+
+.task-header {
+
+    @include title;
+}
+
+.task-navigator {
+    height: 95vh;
+    width: 80px;
+}
+
+.task-nav-set {
+    position: sticky;
+    top: 0px;
+}
+
+.task-navigator-header {
+    text-align: center;
+    padding: 5px;
+
+    @include title;
+
+    font-size: 300%;
+}
+
+.header-mini {
+    font-size: 50%;
+}
+
+.task-nav-instance {
+    padding: 10px;
+    border-left: solid medium transparent;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $mixpps;
+    }
+
+    @include clickable;
+}
+
+.task-tag {
+    height: 30px;
+}
+
+.tasks-enc {
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.tasks {
+    padding: 40px 0px;
+    display: table;
+    margin: auto;
+}
+
+
+.icon-filter {
+    padding: 5px;
+    transition: 0.2s;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    @include clickable;
+}
+
+.task-num {
+    padding: 0px 10px;
+}
+
+.space {
+    margin: 0px 10px;
+}
+
+.filter_on {
+    background-color: $mixpss;
+}
+
+.focused_task {
+    border-color: $text;
+}
+
+.loader {
+    margin-top: 20vh;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
 }

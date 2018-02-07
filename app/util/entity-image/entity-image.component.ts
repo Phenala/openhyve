@@ -14,16 +14,22 @@ export class EntityImageComponent implements OnInit {
     height: '400px'
   };
 
+  defval = 50;
+
   constructor() { }
 
   ngOnInit() {
     if (!this.scale) {
       this.scale = 1;
     }
-    const defval = 50;
-    console.log(this.scale);
-    this.sizeValues.width = (defval * this.scale) + 'px';
-    this.sizeValues.height = (defval * this.scale) + 'px';
+    this.sizeValues.width = (this.defval * this.scale) + 'px';
+    this.sizeValues.height = (this.defval * this.scale) + 'px';
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnChanges() {
+    this.sizeValues.width = (this.defval * this.scale) + 'px';
+    this.sizeValues.height = (this.defval * this.scale) + 'px';
   }
 
 }

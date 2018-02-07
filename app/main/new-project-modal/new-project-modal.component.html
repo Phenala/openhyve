@@ -1,0 +1,76 @@
+<div  [ngClass]='{modal_visible: false}'>
+  <div class='modal-bg'>
+    <div class='modal-set'>
+      <div class='modal-box'>
+        <div>
+          <div class='new-project'>
+            <div class='box-title'>
+              New Project
+            </div>
+            <app-tabs [tabNames]='tabs' (tabChange)='changeTab($event)' ></app-tabs>
+            <div class='tabset-enclosure'>
+              <div class='tabset' [ngStyle]='tabStyle.outTabStyle'>
+                <div class='main-block-row-set tab'>
+                  <div [ngStyle]='tabStyle.outTabdivStyle'>
+                    <div>
+                      <div class='general-inputs'>
+                        <div class='row-set center'>
+                          <div>
+                            <app-entity-image [scale]='4' ></app-entity-image>
+                          </div>
+                          <div>
+                            <app-upload-image></app-upload-image>
+                          </div>
+                        </div>
+                        <div class='default-input center'>
+                          <table>
+                            <tr>
+                              <th>
+                                Project Name
+                              </th>
+                              <td>
+                                <input>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Field
+                              </th>
+                              <td>
+                                <input>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Description
+                              </th>
+                              <td>
+                                <div class='micrify'>
+                                  <textarea rows='5' ></textarea>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class='space-down'>
+                      </div>
+                      <div class='lean-right'>
+                        <app-button [icon]='"close-icon"' [label]='"Cancel"' ></app-button>
+                        <app-button [icon]='"next-icon"' [label]='"Next"' ></app-button>
+                      </div>
+                    </div>
+                  </div>
+                  <div [ngStyle]='tabStyle.outTabdivStyle'>
+                  </div>
+                  <div [ngStyle]='tabStyle.outTabdivStyle'>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

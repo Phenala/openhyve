@@ -1,5 +1,5 @@
 <div class="tabs">
-  <div class="block-row-set">
+  <div class="block-row-set scaler">
     <div *ngFor='let title of tabNames, let num = index' class="tab-title" [ngClass]='{active_tab: num == activeTab}' [ngStyle]='tabStyle' (click)='switchTo(num)'>
       {{title}}
     </div>
